@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ÆNOVE — Finance & Stratégie</title>
+  <meta name="description" content="Conseil en investissements financiers indépendant, basé au Pays Basque. Un conseil de qualité, accessible à tous. CIF certifié CNCEF." />
+  <meta name="keywords" content="conseiller financier Bayonne, conseil investissement Pays Basque, CIF CNCEF, ÆNOVE" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --cream:      #F5F2EC;
+      --cream-dark: #EDE9E0;
+      --ink:        #1A1814;
+      --ink-soft:   #3D3A34;
+      --gold:       #B89A6A;
+      --gold-light: #D4B88A;
+      --rule:       rgba(26,24,20,0.15);
+      --serif:      'Cormorant Garamond', Georgia, serif;
+      --sans:       'Jost', sans-serif;
+      --ease:       0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(245,242,236,0.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--rule);
+      padding: 1.2rem 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: var(--serif); font-size: 1.4rem; font-weight: 500;
+      letter-spacing: 0.08em; color: var(--ink); text-decoration: none;
+    }
+    .nav-logo span { color: var(--gold); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      font-family: var(--sans); font-size: 0.76rem; font-weight: 400;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--ink-soft); text-decoration: none;
+      transition: color var(--ease);
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-toggle {
+      display: none; background: none; border: none; cursor: pointer;
+      padding: 4px; flex-direction: column; gap: 5px;
+    }
+    .nav-toggle span { display: block; width: 22px; height: 1px; background: var(--ink); }
+
+    /* HERO */
+    #hero {
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center; padding: 8rem 2rem 5rem; position: relative;
+    }
+    #hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(184,154,106,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-eyebrow {
+      font-family: var(--sans); font-size: 0.72rem; font-weight: 400;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);
+      margin-bottom: 1.8rem;
+      animation: fadeUp 0.8s ease both 0.2s;
+    }
+    .hero-logo {
+      font-family: var(--serif); font-size: clamp(4rem, 12vw, 9rem);
+      font-weight: 400; letter-spacing: 0.04em; line-height: 1;
+      color: var(--ink); margin-bottom: 0.3rem;
+      animation: fadeUp 0.9s ease both 0.35s;
+    }
+    .hero-subtitle {
+      font-family: var(--serif); font-size: clamp(1rem, 2.5vw, 1.3rem);
+      font-weight: 300; font-style: italic; letter-spacing: 0.06em;
+      color: var(--ink-soft); margin-bottom: 2.5rem;
+      animation: fadeUp 0.9s ease both 0.5s;
+    }
+    .hero-rule {
+      display: block; width: 1px; height: 60px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      margin: 0 auto 2.5rem;
+      animation: fadeUp 0.9s ease both 0.65s;
+    }
+    .hero-tagline {
+      font-family: var(--serif); font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-weight: 300; line-height: 1.55; color: var(--ink);
+      max-width: 560px; margin: 0 auto 3rem;
+      animation: fadeUp 0.9s ease both 0.8s;
+    }
+    .hero-cta {
+      display: inline-block; font-family: var(--sans); font-size: 0.76rem;
+      font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--cream); background: var(--ink); text-decoration: none;
+      padding: 1.1rem 2.8rem; transition: background var(--ease);
+      animation: fadeUp 0.9s ease both 0.95s;
+    }
+    .hero-cta:hover { background: var(--gold); }
+
+    /* SECTIONS */
+    section { padding: 6rem 0; }
+    .section-label {
+      font-family: var(--sans); font-size: 0.68rem; font-weight: 400;
+      letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold);
+      margin-bottom: 0.8rem;
+    }
+    .section-title {
+      font-family: var(--serif); font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 400; line-height: 1.25; color: var(--ink); margin-bottom: 1rem;
+    }
+    .section-lead {
+      font-family: var(--serif); font-size: 1.05rem; font-style: italic;
+      color: var(--ink-soft); max-width: 560px; line-height: 1.7;
+    }
+
+    /* PHILOSOPHIE */
+    #philosophie { background: var(--cream); }
+    .philo-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: center; margin-top: 4rem;
+    }
+    .philo-text p {
+      font-family: var(--sans); font-size: 0.95rem;
+      color: var(--ink-soft); line-height: 1.85; margin-bottom: 1.2rem;
+    }
+    .philo-pillars { display: flex; flex-direction: column; gap: 1.5rem; }
+    .pillar {
+      display: flex; gap: 1.5rem; align-items: flex-start;
+      padding: 1.8rem; border: 1px solid var(--rule);
+      background: rgba(255,255,255,0.4);
+      transition: border-color var(--ease), background var(--ease);
+    }
+    .pillar:hover { border-color: var(--gold); background: rgba(255,255,255,0.7); }
+    .pillar-num {
+      font-family: var(--serif); font-size: 2rem; font-weight: 300;
+      color: var(--gold); line-height: 1; min-width: 2rem;
+    }
+    .pillar-title {
+      font-family: var(--serif); font-size: 1.1rem; font-weight: 500;
+      color: var(--ink); margin-bottom: 0.3rem;
+    }
+    .pillar-desc {
+      font-family: var(--sans); font-size: 0.85rem;
+      color: var(--ink-soft); line-height: 1.65;
+    }
+
+    /* OFFRES */
+    #offres { background: var(--ink); }
+    #offres .section-label { color: var(--gold-light); }
+    #offres .section-title { color: var(--cream); }
+    #offres .section-lead { color: rgba(245,242,236,0.6); }
+    .offres-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1px; margin-top: 3.5rem; background: rgba(255,255,255,0.06);
+    }
+    .offre-card {
+      background: var(--ink); padding: 2.8rem 2.2rem;
+      border: 1px solid rgba(255,255,255,0.07);
+      position: relative; overflow: hidden;
+      transition: background var(--ease), border-color var(--ease);
+    }
+    .offre-card::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+      height: 2px; background: var(--gold);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform var(--ease);
+    }
+    .offre-card:hover { background: rgba(255,255,255,0.03); border-color: rgba(184,154,106,0.3); }
+    .offre-card:hover::after { transform: scaleX(1); }
+    .offre-tag {
+      font-family: var(--sans); font-size: 0.65rem; font-weight: 400;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 1.2rem;
+    }
+    .offre-name {
+      font-family: var(--serif); font-size: 1.8rem; font-weight: 400;
+      color: var(--cream); line-height: 1.2; margin-bottom: 0.5rem;
+    }
+    .offre-price {
+      font-family: var(--serif); font-size: 2.2rem; font-weight: 300;
+      color: var(--gold); margin-bottom: 0.3rem;
+    }
+    .offre-price sup { font-size: 1rem; vertical-align: super; }
+    .offre-duration {
+      font-family: var(--sans); font-size: 0.78rem;
+      color: rgba(245,242,236,0.4); margin-bottom: 1.8rem;
+      padding-bottom: 1.8rem; border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .offre-desc {
+      font-family: var(--sans); font-size: 0.88rem;
+      color: rgba(245,242,236,0.65); line-height: 1.75; margin-bottom: 1.5rem;
+    }
+    .offre-features { list-style: none; margin-bottom: 2rem; }
+    .offre-features li {
+      font-family: var(--sans); font-size: 0.82rem;
+      color: rgba(245,242,236,0.55); padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      display: flex; align-items: flex-start; gap: 0.7rem;
+    }
+    .offre-features li::before { content: '—'; color: var(--gold); flex-shrink: 0; }
+    .offre-badge {
+      display: inline-block; font-family: var(--sans);
+      font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--gold); border: 1px solid rgba(184,154,106,0.4);
+      padding: 0.3rem 0.8rem; margin-top: 0.5rem;
+    }
+
+    /* MATTHIEU */
+    #matthieu { background: var(--cream-dark); }
+    .matthieu-grid {
+      display: grid; grid-template-columns: 1fr 1.6fr;
+      gap: 5rem; align-items: center; margin-top: 4rem;
+    }
+    .matthieu-portrait {
+      aspect-ratio: 3/4; background: var(--cream);
+      border: 1px solid var(--rule);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--ink-soft); font-family: var(--serif);
+      font-style: italic; font-size: 0.9rem; text-align: center; padding: 2rem;
+    }
+    .matthieu-content p {
+      font-family: var(--sans); font-size: 0.95rem;
+      color: var(--ink-soft); line-height: 1.85; margin-bottom: 1.2rem;
+    }
+    .matthieu-content em {
+      font-family: var(--serif); font-size: 1.05rem;
+      font-weight: 500; color: var(--ink);
+    }
+    .certif-list { margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 0.8rem; }
+    .certif-item {
+      font-family: var(--sans); font-size: 0.72rem; font-weight: 400;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--ink-soft); border: 1px solid var(--rule); padding: 0.5rem 1rem;
+    }
+
+    /* CONTACT */
+    #contact { background: var(--cream); text-align: center; }
+    .contact-inner { max-width: 600px; margin: 0 auto; }
+    .contact-inner p {
+      font-family: var(--sans); font-size: 0.92rem;
+      color: var(--ink-soft); line-height: 1.8;
+    }
+    .contact-actions {
+      display: flex; flex-direction: column; align-items: center;
+      gap: 1rem; margin-top: 2.5rem;
+    }
+    .btn-primary {
+      display: inline-block; font-family: var(--sans); font-size: 0.76rem;
+      font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--cream); background: var(--ink); text-decoration: none;
+      padding: 1.2rem 3rem; transition: background var(--ease);
+      width: 100%; max-width: 340px; text-align: center;
+    }
+    .btn-primary:hover { background: var(--gold); }
+    .btn-secondary {
+      display: inline-block; font-family: var(--sans); font-size: 0.76rem;
+      font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--ink); background: transparent; text-decoration: none;
+      padding: 1.1rem 3rem; border: 1px solid var(--rule);
+      transition: border-color var(--ease), color var(--ease);
+      width: 100%; max-width: 340px; text-align: center;
+    }
+    .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+    .contact-details {
+      margin-top: 2.5rem; font-family: var(--sans);
+      font-size: 0.85rem; color: var(--ink-soft);
+    }
+    .contact-details p { margin-bottom: 0.4rem; }
+    .contact-details a {
+      color: var(--ink-soft); text-decoration: none;
+      border-bottom: 1px solid var(--rule); transition: color var(--ease);
+    }
+    .contact-details a:hover { color: var(--gold); }
+
+    /* FOOTER */
+    footer {
+      background: var(--ink); color: rgba(245,242,236,0.4);
+      padding: 3.5rem 2rem; text-align: center;
+    }
+    .footer-logo {
+      font-family: var(--serif); font-size: 1.8rem; font-weight: 400;
+      color: rgba(245,242,236,0.18); letter-spacing: 0.08em; margin-bottom: 2rem;
+    }
+    .footer-legal {
+      font-family: var(--sans); font-size: 0.72rem; line-height: 1.9;
+      color: rgba(245,242,236,0.32); max-width: 720px; margin: 0 auto 1.2rem;
+    }
+    .footer-legal a {
+      color: rgba(245,242,236,0.4); text-decoration: underline;
+      transition: color var(--ease);
+    }
+    .footer-legal a:hover { color: var(--gold); }
+    .footer-divider {
+      width: 40px; height: 1px;
+      background: rgba(255,255,255,0.1); margin: 1.8rem auto;
+    }
+    .footer-links {
+      display: flex; justify-content: center; gap: 2rem;
+      flex-wrap: wrap; margin-top: 1.5rem; padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .footer-links a {
+      font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.1em;
+      text-transform: uppercase; color: rgba(245,242,236,0.28);
+      text-decoration: none; transition: color var(--ease);
+    }
+    .footer-links a:hover { color: var(--gold); }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .philo-grid, .matthieu-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .offres-grid { grid-template-columns: 1fr; }
+      .matthieu-portrait { aspect-ratio: 4/3; }
+    }
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex; flex-direction: column;
+        position: fixed; top: 58px; left: 0; right: 0; bottom: 0;
+        background: var(--cream);
+        align-items: center; justify-content: center; gap: 2.5rem;
+      }
+      .nav-links.open a { font-size: 1rem; }
+      .nav-toggle { display: flex; }
+      section { padding: 4rem 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#hero" class="nav-logo">Æ<span>NOVE</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#philosophie">Philosophie</a></li>
+      <li><a href="#offres">Offres</a></li>
+      <li><a href="#matthieu">À propos</a></li>
+      <li><a href="#analyses">Analyses</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div>
+      <p class="hero-eyebrow">Conseil en Investissements Financiers · Pays Basque</p>
+      <h1 class="hero-logo">ÆNOVE</h1>
+      <p class="hero-subtitle">Finance &amp; Stratégie</p>
+      <span class="hero-rule"></span>
+      <p class="hero-tagline">
+        Un conseil de qualité, indépendant et sans conflit d'intérêts —<br>
+        accessible à tous, quelle que soit votre situation.
+      </p>
+      <a href="#offres" class="hero-cta">Découvrir les offres</a>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHIE -->
+  <section id="philosophie">
+    <div class="container">
+      <p class="section-label">Notre philosophie</p>
+      <h2 class="section-title">Le conseil de qualité<br>n'est pas un privilège.</h2>
+      <div class="philo-grid">
+        <div class="philo-text">
+          <p>ÆNOVE est né d'une conviction simple : les stratégies solides, les analyses rigoureuses et les conseils éclairés dont bénéficient les personnes fortunées — vous y avez droit aussi.</p>
+          <p>Dans un contexte où les retraites sont incertaines, où l'inflation érode l'épargne dormante et où l'instabilité politique redessine les règles du jeu économique, prendre en main sa situation financière n'est plus une option. C'est une nécessité.</p>
+          <p>ÆNOVE ne vend pas de produits financiers. ÆNOVE ne perçoit pas de commission. Le seul intérêt ici, c'est le vôtre.</p>
+        </div>
+        <div class="philo-pillars">
+          <div class="pillar">
+            <div class="pillar-num">I</div>
+            <div>
+              <div class="pillar-title">Qualité</div>
+              <p class="pillar-desc">Une sélection rigoureuse, fondée sur l'analyse — des instruments financiers solides, choisis pour durer et adaptés à votre situation.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-num">II</div>
+            <div>
+              <div class="pillar-title">Clarté</div>
+              <p class="pillar-desc">Rendre lisible ce qui est complexe, sans simplisme.</p>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-num">III</div>
+            <div>
+              <div class="pillar-title">Accessibilité</div>
+              <p class="pillar-desc">Tarification juste, conseil adapté à chaque situation, sans barrière à l'entrée.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFRES -->
+  <section id="offres">
+    <div class="container">
+      <p class="section-label">Les offres ÆNOVE</p>
+      <h2 class="section-title">Trois prestations,<br>une même exigence.</h2>
+      <p class="section-lead">Chaque prestation est indépendante et complète. Vous choisissez ce dont vous avez besoin, au moment où vous en avez besoin.</p>
+      <div class="offres-grid">
+
+        <div class="offre-card">
+          <p class="offre-tag">Diagnostic</p>
+          <h3 class="offre-name">Séance<br>Boussole</h3>
+          <div class="offre-price"><sup>€</sup>150</div>
+          <p class="offre-duration">Séance unique · 90 minutes</p>
+          <p class="offre-desc">Avant d'investir, il faut savoir d'où on part. En 90 minutes, on passe en revue votre situation financière dans sa globalité : revenus, charges, dépenses, épargne. On identifie ensemble les marges de manœuvre et, si besoin, on structure vos comptes pour que chaque euro ait une destination claire.</p>
+          <ul class="offre-features">
+            <li>Analyse complète de vos revenus et de vos charges</li>
+            <li>Identification des optimisations possibles</li>
+            <li>Structuration de vos enveloppes (loisirs, charges, épargne, investissement)</li>
+            <li>Livrable PDF sous 48h</li>
+          </ul>
+          <span class="offre-badge">Hors conseil en investissement — première étape avant d'investir</span>
+        </div>
+
+        <div class="offre-card">
+          <p class="offre-tag">Conseil complet</p>
+          <h3 class="offre-name">Conseil<br>Sur Mesure</h3>
+          <div class="offre-price"><sup>€</sup>450</div>
+          <p class="offre-duration">Deux séances · Suivi inclus</p>
+          <p class="offre-desc">Un conseil en investissement complet et personnalisé, sur deux séances. On définit ensemble votre horizon, votre tolérance au risque et vos objectifs — puis nous construisons une stratégie adaptée, avec toute la rigueur réglementaire du cadre CIF.</p>
+          <ul class="offre-features">
+            <li>Définition de votre profil et de vos objectifs</li>
+            <li>Sélection des enveloppes fiscales adaptées</li>
+            <li>Stratégie d'allocation et feuille de route personnalisée</li>
+            <li>Document de conseil complet transmis sous 48h</li>
+          </ul>
+        </div>
+
+        <div class="offre-card">
+          <p class="offre-tag">Accompagnement annuel</p>
+          <h3 class="offre-name">Cap<br>&amp; Suivi</h3>
+          <div class="offre-price"><sup>€</sup>400<span style="font-size:1rem;color:rgba(245,242,236,0.35)">/an</span></div>
+          <p class="offre-duration">Abonnement · Accès prioritaire</p>
+          <p class="offre-desc">Pour ne pas rester seul face à l'évolution de vos investissements. Un regard expert, deux fois par an, et une ligne ouverte pour vos questions.</p>
+          <ul class="offre-features">
+            <li>Deux points de 60 minutes par an</li>
+            <li>Accès email cadré (réponse sous 72h ouvrées)</li>
+            <li>Révision de la feuille de route</li>
+          </ul>
+          <span class="offre-badge">Réservé aux clients Conseil Sur Mesure</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MATTHIEU -->
+  <section id="matthieu">
+    <div class="container">
+      <p class="section-label">À propos</p>
+      <h2 class="section-title">Un conseiller<br>différent.</h2>
+      <div class="matthieu-grid">
+        <div class="matthieu-portrait" style="padding:0; overflow:hidden;">
+          <img src="photo.png" alt="Matthieu Skendzic — ÆNOVE" style="width:100%; height:100%; object-fit:cover; object-position: center top; display:block;" />
+        </div>
+        <div class="matthieu-content">
+          <p>Je suis Matthieu, conseiller en investissements financiers certifié CNCEF. Mais ce qui définit mon approche du conseil, c'est peut-être mon autre métier : éducateur spécialisé.</p>
+          <p><em>Expliquer clairement, s'adapter à chaque personne</em> — ce sont des compétences que j'ai forgées au contact des gens. Et il y a un fil conducteur entre les deux métiers : l'éducation spécialisée cherche à rendre les personnes autonomes. C'est exactement ce que je vise en tant que CIF — non pas créer une dépendance au conseil, mais vous donner les clés pour comprendre, décider et agir.</p>
+          <p>Chez ÆNOVE, je suis rémunéré uniquement par mes clients — jamais par les produits que je recommande. Pas de commission, pas de conflit d'intérêts : mon seul intérêt, c'est le vôtre.</p>
+          <p>Que vous ayez 100 € à investir chaque mois ou un patrimoine à réorganiser, vous méritez le même niveau d'attention et de rigueur.</p>
+          <div class="certif-list">
+            <span class="certif-item">CIF Certifié</span>
+            <span class="certif-item">CNCEF PATRIMOINE</span>
+            <span class="certif-item">AMF</span>
+            <span class="certif-item">ORIAS 26003570</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANALYSES -->
+  <section id="analyses" style="background: var(--ink);">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;">
+        <div>
+          <p class="section-label" style="color: var(--gold-light);">Analyses &amp; Réflexions</p>
+          <h2 class="section-title" style="color: var(--cream);">Des idées, pas<br>des opinions.</h2>
+        </div>
+        <div>
+          <p style="font-family: var(--sans); font-size: 0.95rem; color: rgba(245,242,236,0.6); line-height: 1.85; margin-bottom: 1.2rem;">
+            Marchés, macroéconomie, épargne, psychologie en investissement — j'écris régulièrement sur des sujets qui comptent pour comprendre et décider.
+          </p>
+          <p style="font-family: var(--sans); font-size: 0.95rem; color: rgba(245,242,236,0.6); line-height: 1.85; margin-bottom: 2rem;">
+            Les analyses sont publiées sur Substack et accessibles gratuitement. Abonnez-vous pour les recevoir directement par email.
+          </p>
+          <a href="https://aenove.substack.com" target="_blank" rel="noopener" style="display: inline-block; width: auto; font-family: var(--sans); font-size: 0.76rem; font-weight: 400; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); background: var(--gold); text-decoration: none; padding: 1.1rem 2.8rem; transition: background 0.4s ease;">Lire les analyses</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-inner">
+        <p class="section-label">Prendre contact</p>
+        <h2 class="section-title">Commençons<br>par un échange.</h2>
+        <p>Pas de formulaire interminable, pas de relance commerciale. Un premier échange pour comprendre votre situation et voir si ÆNOVE peut vous apporter de la valeur.</p>
+        <div class="contact-actions">
+          <a href="https://calendly.com/contact-aenove" target="_blank" rel="noopener" class="btn-primary">Prendre rendez-vous</a>
+          <a href="mailto:contact@aenove.fr" class="btn-secondary">Écrire par email</a>
+        </div>
+        <div class="contact-details">
+          <p><a href="tel:+33649659614">06 49 65 96 14</a></p>
+          <p style="font-family:var(--sans);font-size:0.85rem;color:var(--ink-soft);">contact&#64;aenove.fr</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">ÆNOVE</div>
+
+    <p class="footer-legal">
+      <strong style="color:rgba(245,242,236,0.5)">ÆNOVE — Matthieu SKENDZIC</strong><br>
+      Entrepreneur Individuel — Régime micro-BNC<br>
+      SIRET : 994 150 506 00016 — Code APE : 66.19B<br>
+      153 chemin Etxehasia — 64480 Ustaritz
+    </p>
+
+    <p class="footer-legal">
+      <a href="https://www.orias.fr" target="_blank" rel="noopener">ORIAS n° 26003570 — www.orias.fr</a><br>
+      Conseiller en Investissements Financiers, membre de la CNCEF PATRIMOINE, chambre agréée par l'Autorité des Marchés Financiers<br>
+      Assurance RCP : MARKEL INSURANCE SE — Police n° 33300
+    </p>
+
+    <div class="footer-divider"></div>
+
+    <p class="footer-legal">
+      Les informations présentes sur ce site ont un caractère purement informatif et ne constituent pas un conseil en investissement.
+      Tout investissement comporte des risques, dont la perte partielle ou totale du capital investi.
+    </p>
+
+    <p class="footer-legal">
+      Hébergeur : Netlify, Inc. — 44 Montgomery Street, Suite 300, San Francisco, CA 94104, USA<br>
+      (art. 6 III loi LCEN n°2004-575)
+    </p>
+
+    <div class="footer-links">
+      <a href="#">Mentions légales</a>
+      <a href="#">Politique de confidentialité</a>
+      <a href="#">CGV</a>
+    </div>
+    <p style="font-size:0.65rem;margin-top:1.5rem;color:rgba(245,242,236,0.18)">© 2025 ÆNOVE. Tous droits réservés.</p>
+  </footer>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-
