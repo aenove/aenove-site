@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Politique de confidentialité — ÆNOVE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cream: #F5F2EC; --cream-dark: #EDE9E0; --ink: #1A1814;
+      --ink-soft: #3D3A34; --gold: #B89A6A; --gold-light: #D4B88A;
+      --rule: rgba(26,24,20,0.15);
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Jost', sans-serif;
+      --ease: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--cream); color: var(--ink); font-family: var(--sans); font-weight: 300; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    .container { max-width: 800px; margin: 0 auto; padding: 0 2rem; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(245,242,236,0.96); backdrop-filter: blur(8px); border-bottom: 1px solid var(--rule); padding: 1.2rem 2rem; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-family: var(--serif); font-size: 1.4rem; font-weight: 500; letter-spacing: 0.08em; color: var(--ink); text-decoration: none; }
+    .nav-logo span { color: var(--gold); }
+    .nav-back { font-family: var(--sans); font-size: 0.76rem; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); text-decoration: none; transition: color var(--ease); }
+    .nav-back:hover { color: var(--gold); }
+    .page-content { padding: 8rem 0 6rem; }
+    .page-eyebrow { font-family: var(--sans); font-size: 0.68rem; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; }
+    .page-title { font-family: var(--serif); font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 400; line-height: 1.25; color: var(--ink); margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid var(--rule); }
+    .page-section { margin-bottom: 2.5rem; }
+    .page-section h2 { font-family: var(--serif); font-size: 1.3rem; font-weight: 500; color: var(--ink); margin-bottom: 1rem; }
+    .page-section p { font-family: var(--sans); font-size: 0.92rem; color: var(--ink-soft); line-height: 1.85; margin-bottom: 0.8rem; }
+    .page-section p strong { color: var(--ink); font-weight: 500; }
+    .page-section ul { margin: 0.5rem 0 1rem 1.2rem; }
+    .page-section ul li { font-family: var(--sans); font-size: 0.92rem; color: var(--ink-soft); line-height: 1.85; margin-bottom: 0.3rem; }
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; font-family: var(--sans); font-size: 0.82rem; }
+    th { background: var(--ink); color: var(--cream); padding: 0.8rem 1rem; text-align: left; font-weight: 400; letter-spacing: 0.05em; }
+    td { padding: 0.8rem 1rem; border-bottom: 1px solid var(--rule); color: var(--ink-soft); vertical-align: top; line-height: 1.6; }
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) td { background: rgba(255,255,255,0.5); }
+    footer { background: var(--ink); color: rgba(245,242,236,0.4); padding: 3rem 2rem; text-align: center; }
+    .footer-logo { font-family: var(--serif); font-size: 1.6rem; font-weight: 400; color: rgba(245,242,236,0.18); letter-spacing: 0.08em; margin-bottom: 1.5rem; }
+    .footer-legal { font-family: var(--sans); font-size: 0.72rem; line-height: 1.9; color: rgba(245,242,236,0.32); max-width: 720px; margin: 0 auto 1rem; }
+    .footer-legal a { color: rgba(245,242,236,0.4); text-decoration: underline; }
+    .footer-divider { width: 40px; height: 1px; background: rgba(255,255,255,0.1); margin: 1.5rem auto; }
+    .footer-links { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.06); }
+    .footer-links a { font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(245,242,236,0.28); text-decoration: none; }
+    .footer-links a:hover { color: var(--gold); }
+    @media (max-width: 640px) { nav { padding: 1rem 1.5rem; } .page-content { padding: 6rem 0 4rem; } table { font-size: 0.75rem; } th, td { padding: 0.6rem 0.7rem; } }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-logo">Æ<span>NOVE</span></a>
+    <a href="/" class="nav-back">← Retour au site</a>
+  </nav>
+
+  <div class="page-content">
+    <div class="container">
+      <p class="page-eyebrow">RGPD</p>
+      <h1 class="page-title">Politique de confidentialité</h1>
+
+      <div class="page-section">
+        <h2>Responsable de traitement</h2>
+        <p><strong>Matthieu SKENDZIC — ÆNOVE</strong><br>
+        153 chemin Etxehasia — 64480 Ustaritz<br>
+        contact@aenove.fr — 06 49 65 96 14</p>
+      </div>
+
+      <div class="page-section">
+        <h2>Données collectées et finalités</h2>
+        <p>Dans le cadre de son activité, ÆNOVE collecte et traite des données personnelles pour les finalités suivantes :</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Finalité</th>
+              <th>Données collectées</th>
+              <th>Base légale</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Gestion des clients (Séance Boussole, Conseil Sur Mesure, Cap & Suivi)</td>
+              <td>Identité, coordonnées, situation financière et patrimoniale, revenus, objectifs d'investissement, tolérance au risque, préférences de durabilité</td>
+              <td>Exécution du contrat (art. 6(1)(b) RGPD)</td>
+            </tr>
+            <tr>
+              <td>Obligations LCB-FT</td>
+              <td>Identité complète, pièces d'identité, origine des fonds</td>
+              <td>Obligation légale (art. 6(1)(c) RGPD)</td>
+            </tr>
+            <tr>
+              <td>Prospection commerciale et prise de contact</td>
+              <td>Nom, email, téléphone</td>
+              <td>Intérêt légitime (art. 6(1)(f) RGPD) — Droit d'opposition à tout moment</td>
+            </tr>
+            <tr>
+              <td>Prise de rendez-vous en ligne</td>
+              <td>Nom, email, téléphone, créneau choisi</td>
+              <td>Intérêt légitime (art. 6(1)(f) RGPD)</td>
+            </tr>
+            <tr>
+              <td>Gestion comptable</td>
+              <td>Nom, adresse de facturation, montants</td>
+              <td>Obligation légale (art. 6(1)(c) RGPD)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="page-section">
+        <h2>Destinataires des données</h2>
+        <p>ÆNOVE ne cède ni ne revend les données personnelles de ses clients. Les données peuvent être transmises aux sous-traitants suivants, dans le strict cadre des finalités ci-dessus :</p>
+        <ul>
+          <li>Calendly (prise de rendez-vous en ligne — transfert US sous EU-US Data Privacy Framework)</li>
+          <li>Netlify (hébergement du site — transfert US sous EU-US Data Privacy Framework)</li>
+          <li>Hébergeur de messagerie professionnelle</li>
+          <li>Outil de facturation</li>
+        </ul>
+        <p>Les données peuvent également être transmises aux autorités compétentes (AMF, TRACFIN, CNCEF PATRIMOINE) dans le cadre des obligations légales et réglementaires.</p>
+      </div>
+
+      <div class="page-section">
+        <h2>Durées de conservation</h2>
+        <ul>
+          <li>Dossiers clients CIF : 5 ans après la fin de la relation contractuelle</li>
+          <li>Documents LCB-FT : 5 ans après la fin de la relation d'affaires</li>
+          <li>Données prospects : 3 ans à compter du dernier contact</li>
+          <li>Documents comptables : 10 ans</li>
+          <li>Données de prise de rendez-vous : 3 ans</li>
+        </ul>
+      </div>
+
+      <div class="page-section">
+        <h2>Vos droits</h2>
+        <p>Conformément au RGPD, vous disposez des droits suivants sur vos données personnelles :</p>
+        <ul>
+          <li>Droit d'accès (art. 15)</li>
+          <li>Droit de rectification (art. 16)</li>
+          <li>Droit à l'effacement (art. 17), sous réserve des obligations légales de conservation</li>
+          <li>Droit à la limitation du traitement (art. 18)</li>
+          <li>Droit à la portabilité (art. 20)</li>
+          <li>Droit d'opposition (art. 21), notamment à la prospection commerciale</li>
+          <li>Droit de retrait du consentement (art. 7(3))</li>
+        </ul>
+        <p>Pour exercer ces droits : contact@aenove.fr ou courrier à l'adresse professionnelle d'ÆNOVE. Réponse sous un mois.</p>
+        <p>Si vous estimez que vos droits ne sont pas respectés, vous pouvez introduire une réclamation auprès de la CNIL — <a href="https://www.cnil.fr" target="_blank" rel="noopener" style="color:var(--gold);">www.cnil.fr</a>.</p>
+      </div>
+
+      <div class="page-section">
+        <h2>Cookies</h2>
+        <p>Le site aenove.fr n'utilise aucun cookie non essentiel (pas de cookie analytique, pas de cookie publicitaire, pas de traceur tiers). Aucun bandeau de consentement n'est requis. Cette position sera réévaluée en cas d'ajout d'un outil de mesure d'audience.</p>
+      </div>
+
+      <div class="page-section">
+        <h2>Transferts hors UE</h2>
+        <p>Certains sous-traitants (Calendly, Netlify) sont établis aux États-Unis. Ces transferts sont encadrés par le EU-US Data Privacy Framework (décision d'adéquation de la Commission européenne de juillet 2023).</p>
+      </div>
+
+      <div class="page-section">
+        <p style="font-size:0.82rem; color: var(--ink-soft); font-style:italic;">Dernière mise à jour : avril 2026.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo">ÆNOVE</div>
+    <p class="footer-legal">ÆNOVE — Matthieu SKENDZIC — Entrepreneur Individuel — Régime micro-BNC<br>
+    SIRET : 994 150 506 00016 — 153 chemin Etxehasia — 64480 Ustaritz<br>
+    <a href="https://www.orias.fr" target="_blank" rel="noopener">ORIAS n° 26003570</a> — CNCEF PATRIMOINE, chambre agréée par l'AMF</p>
+    <div class="footer-divider"></div>
+    <div class="footer-links">
+      <a href="/mentions-legales">Mentions légales</a>
+      <a href="/confidentialite">Politique de confidentialité</a>
+      <a href="/cgv">CGV</a>
+      <a href="/durabilite">Politique de durabilité</a>
+    </div>
+    <p style="font-size:0.65rem;margin-top:1.5rem;color:rgba(245,242,236,0.18)">© 2026 ÆNOVE. Tous droits réservés.</p>
+  </footer>
+
+</body>
+</html>
