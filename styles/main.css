@@ -1,0 +1,32 @@
+:root {
+    --cream: #F5F2EC;
+    --cream-dark: #EDE9E0;
+    --ink: #1A1814;
+    --ink-soft: #3D3A34;
+    --gold: #B89A6A;
+    --gold-light: #D4B88A;
+    --rule: rgba(26, 24, 20, 0.15);
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'Jost', sans-serif;
+    --ease: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 300;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    max-width: 100vw;
+}

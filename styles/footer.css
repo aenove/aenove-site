@@ -1,0 +1,59 @@
+footer {
+    background: var(--ink);
+    color: rgba(245, 242, 236, 0.4);
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.footer-logo {
+    font-family: var(--serif);
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: rgba(245, 242, 236, 0.18);
+    letter-spacing: 0.08em;
+    margin-bottom: 1.5rem;
+}
+
+.footer-legal {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    line-height: 1.9;
+    color: rgba(245, 242, 236, 0.32);
+    max-width: 720px;
+    margin: 0 auto 1rem;
+}
+
+.footer-legal a {
+    color: rgba(245, 242, 236, 0.4);
+    text-decoration: underline;
+}
+
+.footer-divider {
+    width: 40px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 1.5rem auto;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.footer-links a {
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(245, 242, 236, 0.28);
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: var(--gold);
+}

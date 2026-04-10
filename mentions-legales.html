@@ -7,48 +7,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --cream: #F5F2EC; --cream-dark: #EDE9E0; --ink: #1A1814;
-      --ink-soft: #3D3A34; --gold: #B89A6A; --gold-light: #D4B88A;
-      --rule: rgba(26,24,20,0.15);
-      --serif: 'Cormorant Garamond', Georgia, serif;
-      --sans: 'Jost', sans-serif;
-      --ease: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { background: var(--cream); color: var(--ink); font-family: var(--sans); font-weight: 300; line-height: 1.7; -webkit-font-smoothing: antialiased; }
-    .container { max-width: 800px; margin: 0 auto; padding: 0 2rem; }
-
-    /* NAV */
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(245,242,236,0.96); backdrop-filter: blur(8px); border-bottom: 1px solid var(--rule); padding: 1.2rem 2rem; display: flex; align-items: center; justify-content: space-between; }
-    .nav-logo { font-family: var(--serif); font-size: 1.4rem; font-weight: 500; letter-spacing: 0.08em; color: var(--ink); text-decoration: none; }
-    .nav-logo span { color: var(--gold); }
-    .nav-back { font-family: var(--sans); font-size: 0.76rem; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); text-decoration: none; transition: color var(--ease); }
-    .nav-back:hover { color: var(--gold); }
-
-    /* CONTENT */
-    .page-content { padding: 8rem 0 6rem; }
-    .page-eyebrow { font-family: var(--sans); font-size: 0.68rem; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; }
-    .page-title { font-family: var(--serif); font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 400; line-height: 1.25; color: var(--ink); margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid var(--rule); }
-    .page-section { margin-bottom: 2.5rem; }
-    .page-section h2 { font-family: var(--serif); font-size: 1.3rem; font-weight: 500; color: var(--ink); margin-bottom: 1rem; }
-    .page-section p { font-family: var(--sans); font-size: 0.92rem; color: var(--ink-soft); line-height: 1.85; margin-bottom: 0.8rem; }
-    .page-section p strong { color: var(--ink); font-weight: 500; }
-
-    /* FOOTER */
-    footer { background: var(--ink); color: rgba(245,242,236,0.4); padding: 3rem 2rem; text-align: center; }
-    .footer-logo { font-family: var(--serif); font-size: 1.6rem; font-weight: 400; color: rgba(245,242,236,0.18); letter-spacing: 0.08em; margin-bottom: 1.5rem; }
-    .footer-legal { font-family: var(--sans); font-size: 0.72rem; line-height: 1.9; color: rgba(245,242,236,0.32); max-width: 720px; margin: 0 auto 1rem; }
-    .footer-legal a { color: rgba(245,242,236,0.4); text-decoration: underline; }
-    .footer-divider { width: 40px; height: 1px; background: rgba(255,255,255,0.1); margin: 1.5rem auto; }
-    .footer-links { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.06); }
-    .footer-links a { font-family: var(--sans); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(245,242,236,0.28); text-decoration: none; transition: color var(--ease); }
-    .footer-links a:hover { color: var(--gold); }
-
-    @media (max-width: 640px) { nav { padding: 1rem 1.5rem; } .page-content { padding: 6rem 0 4rem; } }
-  </style>
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/nav.css" />
+  <link rel="stylesheet" href="styles/footer.css" />
+  <link rel="stylesheet" href="styles/page.css" />
 </head>
 <body>
 
