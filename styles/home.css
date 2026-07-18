@@ -266,6 +266,9 @@ section {
     position: relative;
     overflow: hidden;
     transition: background var(--ease), border-color var(--ease);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .offre-card::after {
@@ -697,4 +700,31 @@ tr:nth-child(even) td {
     th, td {
         padding: 0.6rem 0.7rem;
     }
+}
+
+/* CTA des cartes d'offres */
+.offre-cta {
+    display: inline-block;
+    margin-top: auto;
+    align-self: stretch;
+    text-align: center;
+    font-family: var(--sans);
+    font-size: 0.76rem;
+    font-weight: 400;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink);
+    background: var(--gold);
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    transition: background var(--ease), color var(--ease);
+}
+
+.offre-cta:hover {
+    background: var(--cream);
+    color: var(--ink);
+}
+
+.offre-badge {
+    margin-bottom: 1.6rem;
 }
