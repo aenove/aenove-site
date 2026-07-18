@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aenove.fr/sitemap.xml
