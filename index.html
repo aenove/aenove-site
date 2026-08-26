@@ -15,9 +15,14 @@
   <link rel="stylesheet" href="styles/nav.css" />
   <link rel="stylesheet" href="styles/footer.css" />
   <link rel="stylesheet" href="styles/home.css" />
+  <link rel="stylesheet" href="styles/premium.css" />
   <script defer src="scripts/popup.js"></script>
+  <script defer src="scripts/premium.js"></script>
 </head>
 <body>
+
+  <div class="progress" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
 
   <!-- NAV -->
   <nav>
@@ -36,7 +41,73 @@
 
   <!-- HERO -->
   <section id="hero">
-    <div>
+
+    <!-- Rose des vents — l'instrument de navigation, gravé en trois plans -->
+    <div class="rose-stage" aria-hidden="true">
+      <div class="rose-depth">
+
+        <div class="rose-layer rose-far">
+          <svg viewBox="-20 -20 440 440" xmlns="http://www.w3.org/2000/svg" fill="none">
+            <circle class="rose-draw" cx="200" cy="200" r="178" stroke="var(--gold)" stroke-width="0.6" opacity="0.30"/>
+            <g class="rose-ring">
+              <circle class="rose-draw" cx="200" cy="200" r="166" stroke="var(--gold)" stroke-width="0.6" opacity="0.35"/>
+              <circle class="rose-draw" cx="200" cy="200" r="152" stroke="var(--gold)" stroke-width="0.6" opacity="0.35"/>
+            </g>
+            <g class="rose-fade"><g class="rose-ticks" id="rose-ticks"></g></g>
+          </svg>
+        </div>
+
+        <div class="rose-layer rose-mid">
+          <svg viewBox="-20 -20 440 440" xmlns="http://www.w3.org/2000/svg">
+            <g class="rose-fade">
+              <!-- Points secondaires -->
+              <g fill="var(--gold)" opacity="0.13">
+                <polygon points="263.6,136.4 218,200 200,200 200,182"/>
+                <polygon points="263.6,263.6 200,218 200,200 218,200"/>
+                <polygon points="136.4,263.6 182,200 200,200 200,218"/>
+                <polygon points="136.4,136.4 200,182 200,200 182,200"/>
+              </g>
+              <!-- Points cardinaux : deux versants, l'un dans l'ombre -->
+              <g>
+                <polygon points="200,62 217,183 200,200" fill="var(--gold)" opacity="0.30"/>
+                <polygon points="200,62 183,183 200,200" fill="var(--ink)" opacity="0.13"/>
+                <polygon points="338,200 217,217 200,200" fill="var(--gold)" opacity="0.30"/>
+                <polygon points="338,200 217,183 200,200" fill="var(--ink)" opacity="0.13"/>
+                <polygon points="200,338 183,217 200,200" fill="var(--gold)" opacity="0.30"/>
+                <polygon points="200,338 217,217 200,200" fill="var(--ink)" opacity="0.13"/>
+                <polygon points="62,200 183,183 200,200" fill="var(--gold)" opacity="0.30"/>
+                <polygon points="62,200 183,217 200,200" fill="var(--ink)" opacity="0.13"/>
+              </g>
+              <g stroke="var(--gold)" stroke-width="0.5" opacity="0.45" fill="none">
+                <polygon points="200,62 217,183 200,200 183,183"/>
+                <polygon points="338,200 217,217 200,200 217,183"/>
+                <polygon points="200,338 183,217 200,200 217,217"/>
+                <polygon points="62,200 183,183 200,200 183,217"/>
+              </g>
+            </g>
+          </svg>
+        </div>
+
+        <div class="rose-layer rose-near">
+          <svg viewBox="-20 -20 440 440" xmlns="http://www.w3.org/2000/svg">
+            <g class="rose-fade">
+              <circle cx="200" cy="200" r="26" fill="none" stroke="var(--gold)" stroke-width="0.7" opacity="0.5"/>
+              <circle cx="200" cy="200" r="2.5" fill="var(--gold)" opacity="0.7"/>
+              <g font-family="Cormorant Garamond, Georgia, serif" font-size="19"
+                 fill="var(--gold)" opacity="0.55" text-anchor="middle">
+                <text x="200" y="-2">N</text>
+                <text x="406" y="207">E</text>
+                <text x="200" y="415">S</text>
+                <text x="-6" y="207">O</text>
+              </g>
+            </g>
+          </svg>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="hero-inner">
       <p class="hero-eyebrow">Conseil en Investissements Financiers · Pays Basque</p>
       <h1 class="hero-logo">ÆNOVE</h1>
       <p class="hero-subtitle">Finance &amp; Stratégie</p>
@@ -47,20 +118,25 @@
       </p>
       <a href="#offres" class="hero-cta">Découvrir les offres</a>
     </div>
+
+    <div class="scroll-hint" aria-hidden="true">
+      Cap au sud
+      <span></span>
+    </div>
   </section>
 
   <!-- PHILOSOPHIE -->
   <section id="philosophie">
     <div class="container">
       <p class="section-label">Notre philosophie</p>
-      <h2 class="section-title">Le conseil de qualité<br>n'est pas un privilège.</h2>
+      <h2 class="section-title" data-reveal>Le conseil de qualité<br>n'est pas un privilège.</h2>
       <div class="philo-grid">
-        <div class="philo-text">
+        <div class="philo-text" data-reveal>
           <p>ÆNOVE est né d'une conviction simple : les stratégies solides, les analyses rigoureuses et les conseils éclairés dont bénéficient les personnes fortunées — vous y avez droit aussi.</p>
           <p>Dans un contexte où les retraites sont incertaines, où l'inflation érode l'épargne dormante et où l'instabilité politique redessine les règles du jeu économique, prendre en main sa situation financière n'est plus une option. C'est une nécessité.</p>
           <p>ÆNOVE ne vend pas de produits financiers. ÆNOVE ne perçoit pas de commission. Le seul intérêt ici, c'est le vôtre.</p>
         </div>
-        <div class="philo-pillars">
+        <div class="philo-pillars" data-reveal>
           <div class="pillar">
             <div class="pillar-num">I</div>
             <div>
@@ -91,11 +167,11 @@
   <section id="offres">
     <div class="container">
       <p class="section-label">Les offres ÆNOVE</p>
-      <h2 class="section-title">Quatre prestations,<br>une même exigence.</h2>
-      <p class="section-lead">Chaque prestation est indépendante et complète. Vous choisissez ce dont vous avez besoin, au moment où vous en avez besoin.</p>
+      <h2 class="section-title" data-reveal>Quatre prestations,<br>une même exigence.</h2>
+      <p class="section-lead" data-reveal data-delay="1">Chaque prestation est indépendante et complète. Vous choisissez ce dont vous avez besoin, au moment où vous en avez besoin.</p>
       <div class="offres-grid">
 
-        <div class="offre-card">
+        <div class="offre-card" data-reveal data-delay="1">
           <p class="offre-tag">Diagnostic</p>
           <h3 class="offre-name">Séance<br>Boussole</h3>
           <div class="offre-price"><sup>€</sup>190</div>
@@ -111,7 +187,7 @@
           <a href="https://calendly.com/contact-aenove" target="_blank" rel="noopener" class="offre-cta">Réserver ma séance</a>
         </div>
 
-        <div class="offre-card">
+        <div class="offre-card" data-reveal data-delay="2">
           <p class="offre-tag">Pédagogie &amp; décodage</p>
           <h3 class="offre-name">Consultation</h3>
           <div class="offre-price"><sup>€</sup>250</div>
@@ -127,7 +203,7 @@
           <a href="https://calendly.com/contact-aenove" target="_blank" rel="noopener" class="offre-cta">Réserver ma séance</a>
         </div>
 
-        <div class="offre-card">
+        <div class="offre-card" data-reveal data-delay="3">
           <p class="offre-tag">Conseil complet</p>
           <h3 class="offre-name">Conseil<br>Sur Mesure</h3>
           <div class="offre-price"><sup>€</sup>890</div>
@@ -142,7 +218,7 @@
           <a href="https://calendly.com/contact-aenove" target="_blank" rel="noopener" class="offre-cta">Réserver ma séance</a>
         </div>
 
-        <div class="offre-card">
+        <div class="offre-card" data-reveal data-delay="4">
           <p class="offre-tag">Accompagnement annuel</p>
           <h3 class="offre-name">Cap<br>&amp; Suivi</h3>
           <div class="offre-price"><sup>€</sup>690<span style="font-size:1rem;color:rgba(245,242,236,0.35)">/an</span></div>
@@ -165,12 +241,12 @@
   <section id="matthieu">
     <div class="container">
       <p class="section-label">À propos</p>
-      <h2 class="section-title">Un conseiller<br>différent.</h2>
+      <h2 class="section-title" data-reveal>Un conseiller<br>différent.</h2>
       <div class="matthieu-grid">
-        <div class="matthieu-portrait" style="padding:0; overflow:hidden;">
+        <div class="matthieu-portrait" data-reveal style="padding:0; overflow:hidden;">
             <img src="photo.webp" alt="Matthieu Skendzic — ÆNOVE" style="width: 100%; height: 100%; object-fit: cover; object-position: center top;">
         </div>
-        <div class="matthieu-content">
+        <div class="matthieu-content" data-reveal>
           <p>Je suis Matthieu, conseiller en investissements financiers, membre de la CNCEF PATRIMOINE. Mais ce qui définit mon approche du conseil, c'est peut-être mon autre métier : éducateur spécialisé.</p>
           <p><em>Expliquer clairement, s'adapter à chaque personne</em> — ce sont des compétences que j'ai forgées au contact des gens. Et il y a un fil conducteur entre les deux métiers : l'éducation spécialisée cherche à rendre les personnes autonomes. C'est exactement ce que je vise en tant que CIF — non pas créer une dépendance au conseil, mais vous donner les clés pour comprendre, décider et agir.</p>
           <p>Chez ÆNOVE, je suis rémunéré uniquement par mes clients — jamais par les produits que je recommande. Pas de commission, pas de conflit d'intérêts : mon seul intérêt, c'est le vôtre.</p>
@@ -194,7 +270,7 @@
       <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:3rem; flex-wrap:wrap; gap:1rem;">
         <div>
           <p class="section-label" style="color: var(--gold-light);">Analyses &amp; Réflexions</p>
-          <h2 class="section-title" style="color: var(--cream);">Des idées, pas<br>des opinions.</h2>
+          <h2 class="section-title" data-reveal style="color: var(--cream);">Des idées, pas<br>des opinions.</h2>
           <p style="font-family:var(--sans); font-size:0.88rem; color:rgba(245,242,236,0.5); margin-top:0.5rem;">
             Marchés, macroéconomie, épargne, psychologie en investissement.
           </p>
@@ -340,13 +416,13 @@
     <div class="container">
       <div class="contact-inner">
         <p class="section-label">Prendre contact</p>
-        <h2 class="section-title">Commençons<br>par un échange.</h2>
+        <h2 class="section-title" data-reveal>Commençons<br>par un échange.</h2>
         <p>Pas de formulaire interminable, pas de relance commerciale. Un premier échange pour comprendre votre situation et voir si ÆNOVE peut vous apporter de la valeur.</p>
-        <div class="contact-actions">
+        <div class="contact-actions" data-reveal>
           <a href="https://calendly.com/contact-aenove" target="_blank" rel="noopener" class="btn-primary">Prendre rendez-vous</a>
           <a href="mailto:contact@aenove.fr" id="btn-email" class="btn-secondary">Écrire par email</a>
         </div>
-        <div class="contact-details">
+        <div class="contact-details" data-reveal>
           <p><a href="tel:+33649659614">06 49 65 96 14</a></p>
           <p style="font-family:var(--sans);font-size:0.85rem;color:var(--ink-soft);">contact&#64;aenove.fr</p>
         </div>
