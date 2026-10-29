@@ -252,7 +252,7 @@
           <p>Chez ÆNOVE, je suis rémunéré uniquement par mes clients — jamais par les produits que je recommande. Pas de commission, pas de conflit d'intérêts : mon seul intérêt, c'est le vôtre.</p>
           <p>Que vous ayez 100 € à investir chaque mois ou un patrimoine à réorganiser, vous méritez le même niveau d'attention et de rigueur.</p>
           <div class="certif-list">
-            <span class="certif-item">CIF Certifié</span>
+            <span class="certif-item">CIF</span>
             <span class="certif-item">CNCEF</span>
             <span class="certif-item">AMF</span>
             <span class="certif-item">ORIAS 26003570</span>
@@ -319,95 +319,159 @@
 
   <script>
   (function() {
-    var RSS_URL = 'https://api.rss2json.com/v1/api.json?rss_url=https://aenove.substack.com/feed&count=10';
+    // Deux sources pour les articles, essayées dans l'ordre :
+    // 1. le flux Substack relayé par Netlify (voir le fichier _redirects) ;
+    // 2. en secours, le service externe rss2json.
+    var SOURCE_NETLIFY = '/flux-analyses';
+    var SOURCE_SECOURS = 'https://api.rss2json.com/v1/api.json?rss_url=' +
+                         encodeURIComponent('https://aenove.substack.com/feed');
+    var MAX_ARTICLES = 10;
+
+    function avecDelai(url, ms) {
+      if (!window.AbortController) return fetch(url);
+      var ctrl = new AbortController();
+      var t = setTimeout(function () { ctrl.abort(); }, ms);
+      return fetch(url, { signal: ctrl.signal }).finally(function () { clearTimeout(t); });
+    }
+
+    function texteDe(parent, tag) {
+      var el = parent.getElementsByTagName(tag)[0];
+      return el ? (el.textContent || '').trim() : '';
+    }
+
+    function depuisNetlify() {
+      return avecDelai(SOURCE_NETLIFY, 8000)
+        .then(function (r) {
+          if (!r.ok) throw new Error('HTTP ' + r.status);
+          return r.text();
+        })
+        .then(function (xml) {
+          var doc = new DOMParser().parseFromString(xml, 'text/xml');
+          if (doc.getElementsByTagName('parsererror').length) throw new Error('flux illisible');
+          var noeuds = doc.getElementsByTagName('item');
+          var items = [];
+          for (var i = 0; i < noeuds.length; i++) {
+            var n = noeuds[i];
+            var encl = n.getElementsByTagName('enclosure')[0];
+            items.push({
+              title: texteDe(n, 'title'),
+              link: texteDe(n, 'link'),
+              pubDate: texteDe(n, 'pubDate'),
+              description: texteDe(n, 'description') || texteDe(n, 'content:encoded'),
+              thumbnail: encl ? encl.getAttribute('url') : ''
+            });
+          }
+          if (!items.length) throw new Error('aucun article');
+          return items;
+        });
+    }
+
+    function depuisSecours() {
+      return avecDelai(SOURCE_SECOURS, 8000)
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          if (data.status !== 'ok' || !data.items || !data.items.length) {
+            throw new Error(data.message || 'aucun article');
+          }
+          return data.items.map(function (it) {
+            return {
+              title: it.title,
+              link: it.link,
+              pubDate: it.pubDate,
+              description: it.description || it.content || '',
+              thumbnail: it.thumbnail || (it.enclosure && it.enclosure.link) || ''
+            };
+          });
+        });
+    }
 
     function formatDate(dateStr) {
-      var d = new Date(dateStr);
-      return d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+      var d = new Date(dateStr.replace(' ', 'T'));
+      if (isNaN(d)) d = new Date(dateStr);
+      return isNaN(d) ? '' : d.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
     }
 
     function stripHtml(html) {
       var tmp = document.createElement('div');
       tmp.innerHTML = html;
-      return tmp.textContent || tmp.innerText || '';
+      return (tmp.textContent || tmp.innerText || '').replace(/\s+/g, ' ').trim();
     }
 
     function truncate(str, n) {
       return str.length > n ? str.substr(0, n - 1) + '…' : str;
     }
 
-    fetch(RSS_URL)
-      .then(function(r) { return r.json(); })
-      .then(function(data) {
-        document.getElementById('articles-loading').style.display = 'none';
+    function afficher(items) {
+      items = items.slice(0, MAX_ARTICLES);
+      document.getElementById('articles-loading').style.display = 'none';
 
-        if (!data.items || data.items.length === 0) {
-          document.getElementById('articles-error').style.display = 'block';
-          return;
+      // Dernier article mis en avant
+      var first = items[0];
+      document.getElementById('featured-link').href = first.link;
+      document.getElementById('featured-title').textContent = first.title;
+      document.getElementById('featured-date').textContent = formatDate(first.pubDate);
+      document.getElementById('featured-excerpt').textContent = truncate(stripHtml(first.description), 220);
+
+      if (first.thumbnail) {
+        document.getElementById('featured-img').src = first.thumbnail;
+        document.getElementById('featured-img').alt = first.title;
+        document.getElementById('featured-thumbnail').style.display = 'block';
+      }
+
+      document.getElementById('featured-article').style.display = 'block';
+
+      var featuredEl = document.getElementById('featured-link');
+      featuredEl.addEventListener('mouseenter', function() { this.style.borderColor = 'rgba(184,154,106,0.4)'; });
+      featuredEl.addEventListener('mouseleave', function() { this.style.borderColor = 'rgba(255,255,255,0.1)'; });
+
+      // Articles précédents
+      if (items.length > 1) {
+        var grid = document.getElementById('articles-grid');
+        for (var i = 1; i < items.length; i++) {
+          var item = items[i];
+          var row = document.createElement('a');
+          row.href = item.link;
+          row.target = '_blank';
+          row.rel = 'noopener';
+          row.style.cssText = 'display:flex; justify-content:space-between; align-items:center; gap:2rem; padding:1.1rem 0; border-bottom:1px solid rgba(255,255,255,0.06); text-decoration:none; transition:color 0.3s ease;';
+
+          var title = document.createElement('span');
+          title.textContent = item.title;
+          title.style.cssText = 'font-family:\'Cormorant Garamond\',Georgia,serif; font-size:1rem; color:rgba(245,242,236,0.75); line-height:1.4; flex:1;';
+
+          var date = document.createElement('span');
+          date.textContent = formatDate(item.pubDate);
+          date.style.cssText = 'font-family:\'Jost\',sans-serif; font-size:0.72rem; color:rgba(245,242,236,0.3); white-space:nowrap; flex-shrink:0;';
+
+          row.appendChild(title);
+          row.appendChild(date);
+
+          row.addEventListener('mouseenter', function() {
+            this.querySelector('span').style.color = 'rgba(245,242,236,1)';
+          });
+          row.addEventListener('mouseleave', function() {
+            this.querySelector('span').style.color = 'rgba(245,242,236,0.75)';
+          });
+
+          grid.appendChild(row);
         }
+        document.getElementById('articles-list').style.display = 'block';
+      }
+    }
 
-        var items = data.items;
+    function echec(err) {
+      if (window.console) console.warn('Articles ÆNOVE indisponibles :', err && err.message);
+      document.getElementById('articles-loading').style.display = 'none';
+      document.getElementById('articles-error').style.display = 'block';
+    }
 
-        // Dernier article mis en avant
-        var first = items[0];
-        document.getElementById('featured-link').href = first.link;
-        document.getElementById('featured-title').textContent = first.title;
-        document.getElementById('featured-date').textContent = formatDate(first.pubDate);
-        var excerpt = truncate(stripHtml(first.description), 220);
-        document.getElementById('featured-excerpt').textContent = excerpt;
-
-        // Image de couverture
-        var img = first.thumbnail || (first.enclosure && first.enclosure.link) || null;
-        if (img) {
-          document.getElementById('featured-img').src = img;
-          document.getElementById('featured-img').alt = first.title;
-          document.getElementById('featured-thumbnail').style.display = 'block';
-        }
-
-        document.getElementById('featured-article').style.display = 'block';
-
-        var featuredEl = document.getElementById('featured-article').querySelector('a');
-        featuredEl.addEventListener('mouseenter', function() { this.style.borderColor = 'rgba(184,154,106,0.4)'; });
-        featuredEl.addEventListener('mouseleave', function() { this.style.borderColor = 'rgba(255,255,255,0.1)'; });
-
-        // Historique
-        if (items.length > 1) {
-          var grid = document.getElementById('articles-grid');
-          for (var i = 1; i < items.length; i++) {
-            var item = items[i];
-            var row = document.createElement('a');
-            row.href = item.link;
-            row.target = '_blank';
-            row.rel = 'noopener';
-            row.style.cssText = 'display:flex; justify-content:space-between; align-items:center; gap:2rem; padding:1.1rem 0; border-bottom:1px solid rgba(255,255,255,0.06); text-decoration:none; transition:color 0.3s ease;';
-
-            var title = document.createElement('span');
-            title.textContent = item.title;
-            title.style.cssText = 'font-family:\'Cormorant Garamond\',Georgia,serif; font-size:1rem; color:rgba(245,242,236,0.75); line-height:1.4; flex:1;';
-
-            var date = document.createElement('span');
-            date.textContent = formatDate(item.pubDate);
-            date.style.cssText = 'font-family:\'Jost\',sans-serif; font-size:0.72rem; color:rgba(245,242,236,0.3); white-space:nowrap; flex-shrink:0;';
-
-            row.appendChild(title);
-            row.appendChild(date);
-
-            row.addEventListener('mouseenter', function() {
-              this.querySelector('span').style.color = 'rgba(245,242,236,1)';
-            });
-            row.addEventListener('mouseleave', function() {
-              this.querySelector('span').style.color = 'rgba(245,242,236,0.75)';
-            });
-
-            grid.appendChild(row);
-          }
-          document.getElementById('articles-list').style.display = 'block';
-        }
+    depuisNetlify()
+      .catch(function (err) {
+        if (window.console) console.warn('Relais Netlify indisponible, essai du secours :', err && err.message);
+        return depuisSecours();
       })
-      .catch(function() {
-        document.getElementById('articles-loading').style.display = 'none';
-        document.getElementById('articles-error').style.display = 'block';
-      });
+      .then(afficher)
+      .catch(echec);
   })();
   </script>
 
