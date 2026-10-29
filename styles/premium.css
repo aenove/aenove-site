@@ -253,17 +253,21 @@ body.page-inner nav {
     transform: none;
 }
 
-/* titres : dévoilés comme une impression qui apparaît */
+/* titres : apparition plus lente, avec un léger flou qui se dissipe.
+   (Pas de clip-path : un titre entièrement masqué n'est jamais détecté
+   à l'écran par le navigateur, et ne s'affichait donc jamais.) */
 .section-title[data-reveal] {
-    clip-path: inset(0 0 100% 0);
     transform: translateY(34px);
+    filter: blur(4px);
     transition: opacity 1.3s cubic-bezier(0.22, 1, 0.36, 1),
                 transform 1.3s cubic-bezier(0.22, 1, 0.36, 1),
-                clip-path 1.3s cubic-bezier(0.22, 1, 0.36, 1);
+                filter 1.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .section-title[data-reveal].is-visible {
-    clip-path: inset(0 0 0 0);
+    opacity: 1;
+    transform: none;
+    filter: none;
 }
 
 /* cascade */
@@ -453,7 +457,7 @@ a:focus-visible, button:focus-visible {
     }
 
     [data-reveal] { opacity: 1; transform: none; }
-    .section-title[data-reveal] { clip-path: none; }
+    .section-title[data-reveal] { filter: none; transform: none; }
     .grain { animation: none; }
     .rose-draw { stroke-dashoffset: 0; }
     .rose-fade { opacity: 1; }
