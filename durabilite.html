@@ -80,6 +80,15 @@
     SIRET : 994 150 506 00016 — 153 chemin Etxehasia — 64480 Ustaritz<br>
     <a href="https://www.orias.fr" target="_blank" rel="noopener">ORIAS n° 26003570</a> — membre de la CNCEF, association professionnelle habilitée par l'AMF (art. L. 541-4 CMF)</p>
     <div class="footer-divider"></div>
+    <div class="footer-badge">
+      <a href="https://zeroretro.fr/verification/aenove-ustaritz" target="_blank" rel="noopener" aria-label="Vérifier l'attestation zéro rétro d'ÆNOVE sur ZeroRetro (nouvel onglet)">
+        <img src="https://zeroretro.fr/badge/aenove-ustaritz.svg" alt="Badge ZeroRetro : zéro rétro attesté" width="316" height="44" loading="lazy" />
+      </a>
+    </div>
+    <div class="footer-contrat">
+      <a href="/resilier">Résilier votre contrat</a>
+      <a href="/renoncer">Renoncer au contrat ici</a>
+    </div>
     <div class="footer-links">
       <a href="/mentions-legales">Mentions légales</a>
       <a href="/confidentialite">Politique de confidentialité</a>
@@ -89,5 +98,11 @@
     <p style="font-size:0.65rem;margin-top:1.5rem;color:rgba(245,242,236,0.18)">© 2026 ÆNOVE. Tous droits réservés.</p>
   </footer>
 
-</body>
+<script>
+document.querySelectorAll('a[href*="cdn-cgi"], a[href*="email-protection"]').forEach(function(a){
+  a.href='mailto:contact@aenove.fr';
+  if(a.querySelector('span')){a.querySelector('span').textContent='contact@aenove.fr';}
+  if(!a.querySelector('span') && a.textContent.includes('protected')){a.textContent='contact@aenove.fr';}
+});
+</script></body>
 </html>

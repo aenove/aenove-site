@@ -234,20 +234,20 @@ section {
     line-height: 1.65;
 }
 
-/* OFFRES */
-#offres {
+/* ACCOMPAGNEMENT (ancienne section Offres) */
+#accompagnement {
     background: var(--ink);
 }
 
-#offres .section-label {
+#accompagnement .section-label {
     color: var(--gold-light);
 }
 
-#offres .section-title {
+#accompagnement .section-title {
     color: var(--cream);
 }
 
-#offres .section-lead {
+#accompagnement .section-lead {
     color: rgba(245, 242, 236, 0.6);
 }
 
@@ -727,4 +727,48 @@ tr:nth-child(even) td {
 
 .offre-badge {
     margin-bottom: 1.6rem;
+}
+
+/* ---------- OFFRES : grille de novembre 2026 ---------- */
+.offres-groupe {
+    font-family: var(--sans);
+    font-size: 0.68rem;
+    font-weight: 400;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-top: 3.5rem;
+}
+.offres-groupe + .offres-grid {
+    margin-top: 1.2rem;
+}
+.offres-grid--trois {
+    grid-template-columns: repeat(3, 1fr);
+}
+.offre-card--compacte {
+    padding: 2.2rem;
+}
+.offre-card--compacte .offre-price {
+    margin-bottom: 1.2rem;
+}
+.offres-note,
+.offres-mentions {
+    font-family: var(--sans);
+    font-size: 0.82rem;
+    line-height: 1.75;
+    color: rgba(245, 242, 236, 0.55);
+    max-width: 760px;
+    margin-top: 1.6rem;
+}
+.offres-mentions {
+    font-size: 0.72rem;
+    color: rgba(245, 242, 236, 0.4);
+    margin-top: 3rem;
+    padding-top: 1.6rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+@media (max-width: 900px) {
+    .offres-grid--trois {
+        grid-template-columns: 1fr;
+    }
 }

@@ -57,3 +57,50 @@ footer {
 .footer-links a:hover {
     color: var(--gold);
 }
+
+/* Bloc « contrat » ajouté au pied de page de toutes les pages */
+.footer-contrat {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.6rem 2rem;
+    margin: 1.5rem 0 0;
+}
+
+.footer-contrat a {
+    font-family: var(--sans);
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+    color: rgba(245, 242, 236, 0.82);
+    text-decoration: underline;
+    text-decoration-color: var(--gold);
+    text-underline-offset: 4px;
+}
+
+.footer-contrat a:hover,
+.footer-contrat a:focus-visible {
+    color: var(--gold-light);
+}
+
+/* Badge ZeroRetro « zéro rétro attesté », présent sur toutes les pages */
+.footer-badge {
+    margin: 1.6rem 0 0.4rem;
+}
+
+.footer-badge a {
+    display: inline-block;
+    line-height: 0;
+    opacity: 0.92;
+    transition: opacity var(--ease);
+}
+
+.footer-badge a:hover,
+.footer-badge a:focus-visible {
+    opacity: 1;
+}
+
+.footer-badge img {
+    width: 316px;
+    max-width: 100%;
+    height: auto;
+}

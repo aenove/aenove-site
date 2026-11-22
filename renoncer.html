@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Renoncer au contrat ici | ÆNOVE</title>
+  <meta name="description" content="Exercez en ligne votre droit de rétractation sur un contrat conclu avec ÆNOVE." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;family=Jost:wght@300;400;500&amp;display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/footer.css" />
+  <link rel="stylesheet" href="styles/nav.css" />
+  <link rel="stylesheet" href="styles/page.css" />
+  <link rel="stylesheet" href="styles/premium.css" />
+  <link rel="stylesheet" href="styles/demandes.css" />
+  <script defer src="scripts/premium.js"></script>
+  <script defer src="scripts/demandes.js"></script>
+</head>
+<body class="page-inner">
+
+  <div class="progress" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+
+  <nav>
+    <a href="/" class="nav-logo">Æ<span>NOVE</span></a>
+    <a href="/" class="nav-back">← Retour au site</a>
+  </nav>
+
+  <div class="page-content">
+    <div class="container">
+      <p class="page-eyebrow">Droit de rétractation</p>
+      <h1 class="page-title">Renoncer au contrat ici</h1>
+
+      <div class="page-section">
+        <p class="demande-intro">Lorsque vous avez conclu un contrat avec ÆNOVE à distance, vous disposez d'un délai de quatorze jours à compter de sa conclusion pour vous rétracter, sans avoir à motiver votre décision et sans pénalité. Cette page vous permet d'exercer ce droit en ligne, gratuitement, pendant toute la durée de ce délai.</p>
+      </div>
+
+      <div class="page-section">
+        <h2>Ce qu'il faut savoir</h2>
+        <p>Si l'exécution de la prestation a commencé à votre demande expresse avant la fin du délai, vous restez redevable d'un montant correspondant au service fourni jusqu'à la communication de votre décision, selon le barème de votre lettre de mission ou des conditions générales de vente.</p>
+        <p>Le droit de rétractation ne peut plus être exercé lorsque la prestation a été intégralement exécutée avant la fin du délai, à votre demande expresse et dans les conditions prévues par votre contrat.</p>
+        <p>Les sommes qui vous sont dues sont remboursées dans un délai de quatorze jours, par le même moyen de paiement que celui utilisé lors du paiement initial, sauf accord de votre part pour un autre moyen.</p>
+        <p>Vous pouvez aussi utiliser le formulaire type de rétractation qui vous a été remis, par courriel à <a href="mailto:contact@aenove.fr">contact@aenove.fr</a> ou par courrier au 153 chemin Etxehasia, 64480 Ustaritz. Votre délai est expiré ? Vous pouvez <a href="/resilier">résilier votre contrat</a> dans les conditions prévues.</p>
+      </div>
+
+      <noscript>
+        <div class="demande-note">
+          <p>Ce formulaire nécessite JavaScript. Vous pouvez aussi vous rétracter par courriel à <a href="mailto:contact@aenove.fr">contact@aenove.fr</a> ou par courrier au 153 chemin Etxehasia, 64480 Ustaritz.</p>
+        </div>
+      </noscript>
+
+      <form class="demande-form" name="retractation" method="POST" action="/renoncer" data-netlify="true" netlify-honeypot="bot-field" novalidate hidden
+            data-demande="retractation"
+            data-objet="Rétractation de mon contrat"
+            data-declaration="Je vous notifie par la présente ma rétractation du contrat portant sur la prestation de services ci-dessous.">
+
+        <div data-etape="saisie">
+          <input type="hidden" name="form-name" value="retractation" />
+          <input type="hidden" name="horodatage" value="" />
+          <input type="hidden" name="declaration" value="Je vous notifie par la présente ma rétractation du contrat portant sur la prestation de services ci-dessous." />
+          <p class="bot-field" aria-hidden="true"><label>Ne pas remplir ce champ <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
+
+          <fieldset>
+            <legend>Votre déclaration de rétractation</legend>
+            <div class="demande-note">
+              <p>Je vous notifie par la présente ma rétractation du contrat portant sur la prestation de services ci-dessous.</p>
+            </div>
+            <div class="champ">
+              <label for="nom">Nom et prénom <span class="obligatoire">*</span></label>
+              <input type="text" id="nom" name="nom" autocomplete="name" required data-recap="Nom et prénom" />
+            </div>
+            <div class="champ">
+              <label for="prestation">Prestation concernée <span class="obligatoire">*</span></label>
+              <select id="prestation" name="prestation" required data-recap="Prestation concernée">
+                <option value="">Choisissez la prestation</option>
+                <option>Séance Boussole</option>
+                <option>Carte cadeau « Offrir un cap »</option>
+                <option>Conseil ciblé</option>
+                <option>Conseil Sur Mesure</option>
+                <option>Cap Essentiel</option>
+                <option>Cap &amp; Suivi</option>
+                <option>Autre</option>
+              </select>
+            </div>
+            <div class="champ">
+              <label for="date_conclusion">Date de conclusion du contrat (signature ou commande), si vous la connaissez</label>
+              <input type="date" id="date_conclusion" name="date_conclusion" data-recap="Date de conclusion" />
+            </div>
+            <div class="champ">
+              <label for="reference">Référence du contrat, si vous en avez une</label>
+              <input type="text" id="reference" name="reference" data-recap="Référence" />
+              <span class="aide">Par exemple le numéro figurant sur votre lettre de mission, votre bon de commande, votre carte cadeau ou votre facture.</span>
+            </div>
+            <div class="champ">
+              <label for="email">Adresse électronique <span class="obligatoire">*</span></label>
+              <input type="email" id="email" name="email" autocomplete="email" required data-recap="Adresse électronique" />
+              <span class="aide">L'accusé de réception de votre rétractation vous sera adressé à cette adresse.</span>
+            </div>
+          </fieldset>
+
+          <div class="boutons">
+            <button type="submit" class="btn btn-principal">Continuer</button>
+          </div>
+        </div>
+
+        <div data-etape="recap" hidden>
+          <h2 class="etape-titre">Vérifiez votre déclaration</h2>
+          <p>Je vous notifie par la présente ma rétractation du contrat portant sur la prestation de services ci-dessous. Vous pouvez encore modifier ces informations avant de confirmer.</p>
+          <dl class="recap" data-recap-liste></dl>
+          <div class="boutons">
+            <button type="button" class="btn btn-secondaire" data-action="modifier">Modifier</button>
+            <button type="button" class="btn btn-principal" data-action="envoyer">Confirmer la rétractation</button>
+          </div>
+        </div>
+      </form>
+
+      <div class="alerte" data-etape="echec" hidden>
+        <h2 class="etape-titre">La transmission n'a pas abouti</h2>
+        <p>Votre rétractation n'a pas pu être transmise. Réessayez dans un instant, ou envoyez-la par courriel avant la fin du délai : <a data-mailto href="mailto:contact@aenove.fr">ouvrir un courriel prérempli</a>.</p>
+      </div>
+
+      <div data-etape="fin" hidden>
+        <h2 class="etape-titre">Votre rétractation a bien été transmise</h2>
+        <p class="confirmation-horodatage">Transmise le <span data-horodatage></span> (heure de Paris).</p>
+        <p>ÆNOVE vous adresse sans délai un accusé de réception par courriel, qui reprend le contenu de votre déclaration ainsi que la date et l'heure de sa transmission. Conservez ce récapitulatif.</p>
+        <dl class="recap" data-recap-liste></dl>
+        <div class="boutons no-print">
+          <button type="button" class="btn btn-secondaire" data-action="imprimer">Imprimer ou enregistrer en PDF</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo">ÆNOVE</div>
+    <p class="footer-legal">ÆNOVE — Matthieu SKENDZIC — Entrepreneur Individuel — Régime micro-BNC<br>
+    SIRET : 994 150 506 00016 — 153 chemin Etxehasia — 64480 Ustaritz<br>
+    <a href="https://www.orias.fr" target="_blank" rel="noopener">ORIAS n° 26003570</a> — membre de la CNCEF, association professionnelle habilitée par l'AMF (art. L. 541-4 CMF)</p>
+    <div class="footer-divider"></div>
+    <div class="footer-badge">
+      <a href="https://zeroretro.fr/verification/aenove-ustaritz" target="_blank" rel="noopener" aria-label="Vérifier l'attestation zéro rétro d'ÆNOVE sur ZeroRetro (nouvel onglet)">
+        <img src="https://zeroretro.fr/badge/aenove-ustaritz.svg" alt="Badge ZeroRetro : zéro rétro attesté" width="316" height="44" loading="lazy" />
+      </a>
+    </div>
+    <div class="footer-contrat">
+      <a href="/resilier">Résilier votre contrat</a>
+      <a href="/renoncer">Renoncer au contrat ici</a>
+    </div>
+    <div class="footer-links">
+      <a href="/mentions-legales">Mentions légales</a>
+      <a href="/confidentialite">Politique de confidentialité</a>
+      <a href="/cgv">CGV</a>
+      <a href="/durabilite">Politique de durabilité</a>
+    </div>
+    <p style="font-size:0.65rem;margin-top:1.5rem;color:rgba(245,242,236,0.18)">© 2026 ÆNOVE. Tous droits réservés.</p>
+  </footer>
+
+<script>
+document.querySelectorAll('a[href*="cdn-cgi"], a[href*="email-protection"]').forEach(function(a){
+  a.href='mailto:contact@aenove.fr';
+  if(a.querySelector('span')){a.querySelector('span').textContent='contact@aenove.fr';}
+  if(!a.querySelector('span') && a.textContent.includes('protected')){a.textContent='contact@aenove.fr';}
+});
+</script></body>
+</html>

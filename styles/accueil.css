@@ -1,0 +1,352 @@
+/* ==========================================================================
+   Page d'accueil · refonte de novembre 2026
+   Navigation avec appel découverte, accompagnement, indépendance (badge
+   ZeroRetro), carte cadeau, chantiers en préparation (Ateliers, Entreprise).
+   ========================================================================== */
+
+/* ---------- Navigation ---------- */
+.nav-links {
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-links .nav-cta {
+    display: inline-block;
+    color: var(--ink);
+    border: 1px solid var(--gold);
+    padding: 0.6rem 1.15rem;
+    transition: background var(--ease), color var(--ease), border-color var(--ease);
+}
+
+.nav-links .nav-cta::after {
+    display: none;
+}
+
+.nav-links .nav-cta:hover,
+.nav-links .nav-cta:focus-visible {
+    background: var(--gold);
+    color: var(--ink);
+}
+
+/* Menu replié dès que les sept entrées ne tiennent plus sur une ligne */
+@media (max-width: 1100px) {
+    nav {
+        flex-wrap: wrap;
+    }
+
+    .nav-links {
+        max-height: 0;
+        overflow: hidden;
+        width: 100%;
+        transition: max-height 0.4s ease, padding 0.4s ease;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.4rem;
+    }
+
+    .nav-links.open {
+        display: flex;
+        max-height: 620px;
+        padding: 1.5rem 0;
+    }
+
+    .nav-links a {
+        font-size: 0.95rem;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    nav:has(.nav-links.open) {
+        background: rgba(245, 242, 236, 0.97) !important;
+    }
+}
+
+/* ---------- Haut de page ---------- */
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    animation: fadeUp 0.9s ease both 0.95s;
+}
+
+.hero-actions .hero-cta {
+    animation: none;
+}
+
+.hero-cta--secondaire {
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--ink);
+}
+
+.hero-cta--secondaire:hover,
+.hero-cta--secondaire:focus-visible {
+    background: var(--ink);
+    color: var(--cream);
+}
+
+.hero-note {
+    margin-top: 1.2rem;
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    letter-spacing: 0.02em;
+    color: var(--ink-soft);
+    animation: fadeUp 0.9s ease both 1.05s;
+}
+
+/* ---------- Accompagnement : appel découverte ---------- */
+.appel-decouverte {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2.5rem;
+    margin-top: 3rem;
+    padding: 2.2rem 2.4rem;
+    border: 1px solid rgba(184, 154, 106, 0.45);
+    background: rgba(184, 154, 106, 0.06);
+}
+
+.appel-decouverte .offre-tag {
+    margin-bottom: 0.8rem;
+}
+
+.appel-titre {
+    font-family: var(--serif);
+    font-size: 1.7rem;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--cream);
+    margin-bottom: 0.6rem;
+}
+
+.appel-desc {
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    line-height: 1.75;
+    color: rgba(245, 242, 236, 0.7);
+    max-width: 640px;
+}
+
+.offre-cta.appel-cta {
+    flex-shrink: 0;
+    align-self: center;
+    margin-top: 0;
+    white-space: nowrap;
+}
+
+/* ---------- Accompagnement : indépendance et badge ZeroRetro ---------- */
+.independance {
+    display: flex;
+    align-items: center;
+    gap: 2.4rem;
+    margin-top: 3.5rem;
+    padding: 2.2rem 2.4rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.independance-sceau {
+    flex-shrink: 0;
+    display: block;
+    line-height: 0;
+    transition: transform var(--ease);
+}
+
+.independance-sceau:hover,
+.independance-sceau:focus-visible {
+    transform: translateY(-3px);
+}
+
+.independance-sceau img {
+    display: block;
+    width: 150px;
+    height: 150px;
+}
+
+.independance .offre-tag {
+    margin-bottom: 0.8rem;
+}
+
+.independance-titre {
+    font-family: var(--serif);
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--cream);
+    margin-bottom: 0.7rem;
+}
+
+.independance-texte p:not(.offre-tag) {
+    font-family: var(--sans);
+    font-size: 0.88rem;
+    line-height: 1.75;
+    color: rgba(245, 242, 236, 0.65);
+    max-width: 680px;
+}
+
+/* ---------- Accompagnement : carte cadeau ---------- */
+.offres-grid--une {
+    grid-template-columns: 1fr;
+}
+
+.offre-card--horizontale {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2.5rem;
+}
+
+.offre-horizontale-texte .offre-desc {
+    margin-bottom: 0;
+    max-width: 560px;
+}
+
+.offre-horizontale-action {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1rem;
+    flex-shrink: 0;
+}
+
+.offre-card--compacte .offre-horizontale-action .offre-price {
+    margin-bottom: 0;
+}
+
+.offre-horizontale-action .offre-cta {
+    margin-top: 0;
+    align-self: stretch;
+}
+
+/* ---------- Chantiers en préparation : Ateliers, Entreprise ---------- */
+#chantiers {
+    background: var(--cream);
+    border-top: 1px solid var(--rule);
+}
+
+.chantiers-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 3rem;
+    border: 1px solid var(--rule);
+}
+
+.chantier {
+    padding: 2.6rem 2.4rem;
+    scroll-margin-top: 6rem;
+}
+
+.chantier + .chantier {
+    border-left: 1px solid var(--rule);
+}
+
+.chantier-label {
+    font-family: var(--sans);
+    font-size: 0.68rem;
+    font-weight: 400;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.8rem;
+}
+
+.chantier-titre {
+    font-family: var(--serif);
+    font-size: 1.9rem;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--ink);
+    margin-bottom: 0.9rem;
+}
+
+.chantier-statut {
+    display: inline-block;
+    font-family: var(--sans);
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    padding: 0.35rem 0.8rem;
+    margin-bottom: 1.4rem;
+}
+
+.chantier p:not(.chantier-label) {
+    font-family: var(--sans);
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: var(--ink-soft);
+    margin-bottom: 1rem;
+}
+
+.chantier-lien {
+    display: inline-block;
+    margin-top: 0.4rem;
+    font-family: var(--sans);
+    font-size: 0.74rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 0.2rem;
+    transition: color var(--ease);
+}
+
+.chantier-lien:hover,
+.chantier-lien:focus-visible {
+    color: var(--gold);
+}
+
+/* ---------- Écrans étroits ---------- */
+@media (max-width: 900px) {
+    .appel-decouverte {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .offre-cta.appel-cta {
+        align-self: stretch;
+        white-space: normal;
+    }
+
+    .chantiers-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .chantier + .chantier {
+        border-left: 0;
+        border-top: 1px solid var(--rule);
+    }
+}
+
+@media (max-width: 700px) {
+    .independance {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .offre-card--horizontale {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .offre-horizontale-action {
+        align-items: flex-start;
+        align-self: stretch;
+    }
+}
+
+@media (max-width: 640px) {
+    .appel-decouverte,
+    .independance,
+    .chantier {
+        padding: 1.8rem 1.4rem;
+    }
+}
+
+/* La rose des vents du haut de page dépasse de 5 px sur mobile : on la rogne horizontalement */
+#hero {
+    overflow-x: clip;
+}
