@@ -38,18 +38,20 @@
         SIRET : 994 150 506 00016 — Code APE : 66.19B<br>
         153 chemin Etxehasia — 64480 Ustaritz<br>
         Email : contact@aenove.fr — Tél : 06 49 65 96 14</p>
+        <p>Directeur de la publication : Matthieu Skendzic.</p>
       </div>
 
       <div class="page-section">
         <h2>Statut réglementaire</h2>
         <p>Conseiller en Investissements Financiers, membre de la CNCEF, association professionnelle habilitée par l'AMF (art. L. 541-4 CMF).</p>
+        <p>Le statut de CIF couvre le Conseil ciblé, le Conseil Sur Mesure, le Cap Essentiel et le Cap & Suivi. La Séance Boussole, diagnostic budgétaire et financier, n'en relève pas.</p>
         <p><a href="https://www.orias.fr" target="_blank" rel="noopener" style="color:var(--gold);">ORIAS n° 26003570 — www.orias.fr</a></p>
         <p>Assurance Responsabilité Civile Professionnelle : MARKEL INSURANCE SE — Police n° 33300</p>
       </div>
 
       <div class="page-section">
         <h2>Hébergeur</h2>
-        <p>Netlify, Inc. — 44 Montgomery Street, Suite 300, San Francisco, CA 94104, USA<br>
+        <p>Netlify, Inc., 101 2nd Street, San Francisco, CA 94105, États-Unis (www.netlify.com)<br>
         (art. 6 III loi LCEN n°2004-575 du 21 juin 2004)</p>
       </div>
 
@@ -66,7 +68,7 @@
 
       <div class="page-section">
         <h2>Crédits</h2>
-        <p>Site conçu et développé par ÆNOVE. Hébergé par Netlify.</p>
+        <p>Site conçu et développé par ÆNOVE. Hébergé par Netlify. Badge « Zéro rétro attesté » fourni par ZeroRetro (zeroretro.fr).</p>
       </div>
     </div>
   </div>
@@ -77,6 +79,15 @@
     SIRET : 994 150 506 00016 — 153 chemin Etxehasia — 64480 Ustaritz<br>
     <a href="https://www.orias.fr" target="_blank" rel="noopener">ORIAS n° 26003570</a> — membre de la CNCEF, association professionnelle habilitée par l'AMF (art. L. 541-4 CMF)</p>
     <div class="footer-divider"></div>
+    <div class="footer-badge">
+      <a href="https://zeroretro.fr/verification/aenove-ustaritz" target="_blank" rel="noopener" aria-label="Vérifier l'attestation zéro rétro d'ÆNOVE sur ZeroRetro (nouvel onglet)">
+        <img src="https://zeroretro.fr/badge/aenove-ustaritz.svg" alt="Badge ZeroRetro : zéro rétro attesté" width="316" height="44" loading="lazy" />
+      </a>
+    </div>
+    <div class="footer-contrat">
+      <a href="/resilier">Résilier votre contrat</a>
+      <a href="/renoncer">Renoncer au contrat ici</a>
+    </div>
     <div class="footer-links">
       <a href="/mentions-legales">Mentions légales</a>
       <a href="/confidentialite">Politique de confidentialité</a>
@@ -86,5 +97,11 @@
     <p style="font-size:0.65rem;margin-top:1.5rem;color:rgba(245,242,236,0.18)">© 2026 ÆNOVE. Tous droits réservés.</p>
   </footer>
 
-</body>
+<script>
+document.querySelectorAll('a[href*="cdn-cgi"], a[href*="email-protection"]').forEach(function(a){
+  a.href='mailto:contact@aenove.fr';
+  if(a.querySelector('span')){a.querySelector('span').textContent='contact@aenove.fr';}
+  if(!a.querySelector('span') && a.textContent.includes('protected')){a.textContent='contact@aenove.fr';}
+});
+</script></body>
 </html>

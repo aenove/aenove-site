@@ -1,0 +1,263 @@
+/* ============================================================
+   ÆNOVE · Pages « Résilier votre contrat » et « Renoncer au contrat ici »
+   Formulaire, récapitulatif, confirmation.
+   ============================================================ */
+
+.demande-intro {
+    font-size: 0.98rem;
+}
+
+.demande-note {
+    border-left: 2px solid var(--gold);
+    padding: 0.9rem 1.2rem;
+    margin: 1.2rem 0 1.6rem;
+    background: rgba(184, 154, 106, 0.07);
+}
+
+.demande-note p {
+    margin-bottom: 0.4rem;
+}
+
+.demande-note p:last-child {
+    margin-bottom: 0;
+}
+
+.demande-form fieldset {
+    border: none;
+    border-top: 1px solid var(--rule);
+    padding: 1.6rem 0 0.4rem;
+    margin: 0 0 1rem;
+}
+
+.demande-form legend {
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--ink);
+    padding-right: 0.8rem;
+}
+
+.champ {
+    margin: 1.1rem 0;
+}
+
+.champ label,
+.champ .champ-titre {
+    display: block;
+    font-family: var(--sans);
+    font-size: 0.86rem;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 0.35rem;
+}
+
+.champ .aide {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+    margin-top: 0.3rem;
+    line-height: 1.6;
+}
+
+.obligatoire {
+    color: var(--gold-deep, #8B7355);
+}
+
+.demande-form input[type="text"],
+.demande-form input[type="email"],
+.demande-form input[type="date"],
+.demande-form select,
+.demande-form textarea {
+    width: 100%;
+    font-family: var(--sans);
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: var(--ink);
+    background: #FBFAF7;
+    border: 1px solid rgba(26, 24, 20, 0.28);
+    border-radius: 2px;
+    padding: 0.7rem 0.8rem;
+    transition: border-color var(--ease), box-shadow var(--ease);
+}
+
+.demande-form textarea {
+    min-height: 5.5rem;
+    resize: vertical;
+}
+
+.demande-form input:focus,
+.demande-form select:focus,
+.demande-form textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(184, 154, 106, 0.22);
+}
+
+.demande-form [aria-invalid="true"] {
+    border-color: #9B3B2E;
+}
+
+.choix {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+    margin: 0.45rem 0;
+}
+
+.choix input {
+    margin-top: 0.35rem;
+    accent-color: var(--gold-deep, #8B7355);
+}
+
+.erreur {
+    display: block;
+    font-size: 0.82rem;
+    color: #9B3B2E;
+    margin-top: 0.35rem;
+}
+
+.erreur:empty {
+    display: none;
+}
+
+.bot-field {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.boutons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 2rem 0 1rem;
+}
+
+.btn {
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 0.95rem 1.6rem;
+    border-radius: 2px;
+    cursor: pointer;
+    border: 1px solid var(--ink);
+    transition: background var(--ease), color var(--ease), border-color var(--ease);
+}
+
+.btn-principal {
+    background: var(--ink);
+    color: var(--cream);
+}
+
+.btn-principal:hover,
+.btn-principal:focus-visible {
+    background: var(--gold-deep, #8B7355);
+    border-color: var(--gold-deep, #8B7355);
+}
+
+.btn-secondaire {
+    background: transparent;
+    color: var(--ink);
+}
+
+.btn-secondaire:hover,
+.btn-secondaire:focus-visible {
+    border-color: var(--gold);
+    color: var(--gold-deep, #8B7355);
+}
+
+.btn[disabled] {
+    opacity: 0.6;
+    cursor: wait;
+}
+
+.recap {
+    margin: 1rem 0 0.5rem;
+    border-top: 1px solid var(--rule);
+}
+
+.recap div {
+    display: grid;
+    grid-template-columns: minmax(9rem, 36%) 1fr;
+    gap: 1rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--rule);
+}
+
+.recap dt {
+    font-size: 0.84rem;
+    color: var(--ink-soft);
+}
+
+.recap dd {
+    font-size: 0.92rem;
+    color: var(--ink);
+    white-space: pre-line;
+    overflow-wrap: anywhere;
+}
+
+.etape-titre {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 0.6rem;
+}
+
+.etape-titre:focus {
+    outline: none;
+}
+
+.confirmation-horodatage {
+    font-size: 1rem;
+    color: var(--ink);
+}
+
+.alerte {
+    border-left: 2px solid #9B3B2E;
+    padding: 0.9rem 1.2rem;
+    margin: 1rem 0;
+    background: rgba(155, 59, 46, 0.06);
+}
+
+[data-etape] {
+    scroll-margin-top: 7rem;
+}
+
+.page-content .page-section a,
+.demande-note a,
+.alerte a {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-color: var(--gold);
+    text-underline-offset: 3px;
+}
+
+.page-content .page-section a:hover,
+.demande-note a:hover,
+.alerte a:hover {
+    color: var(--gold-deep, #8B7355);
+}
+
+@media (max-width: 640px) {
+    .recap div {
+        grid-template-columns: 1fr;
+        gap: 0.2rem;
+    }
+}
+
+@media print {
+    nav, footer, .progress, .grain, .boutons, .demande-form fieldset, .no-print {
+        display: none !important;
+    }
+
+    .page-content {
+        padding: 1rem 0;
+    }
+}

@@ -3,9 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ÆNOVE — Finance & Stratégie</title>
-  <meta name="description" content="Conseil en investissements financiers indépendant, basé au Pays Basque. Un conseil de qualité, accessible à tous. CIF membre de la CNCEF." />
-  <meta name="keywords" content="conseiller financier Bayonne, conseil investissement Pays Basque, CIF CNCEF, ÆNOVE" />
+  <title>ÆNOVE · Conseil en investissements financiers indépendant, Pays Basque</title>
+  <meta name="description" content="Conseil en investissements financiers indépendant, rémunéré uniquement par vos honoraires. Basé à Ustaritz, au Pays Basque. Premier appel découverte gratuit de 20 minutes." />
+  <meta name="keywords" content="conseiller en investissements financiers, CIF indépendant, honoraires, Ustaritz, Pays Basque, ÆNOVE" />
+  <link rel="canonical" href="https://aenove.fr/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="ÆNOVE" />
+  <meta property="og:url" content="https://aenove.fr/" />
+  <meta property="og:title" content="ÆNOVE · Conseil en investissements financiers indépendant" />
+  <meta property="og:description" content="Un conseil rémunéré uniquement par vos honoraires, à prix fixe et connu d'avance. Basé à Ustaritz, au Pays Basque." />
   <meta name="google-site-verification" content="CHaQVClchQ-leE1bo1ntJhdWbZhL7afkf-gVmS_LMRA" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,8 +23,39 @@
   <link rel="stylesheet" href="styles/footer.css" />
   <link rel="stylesheet" href="styles/home.css" />
   <link rel="stylesheet" href="styles/premium.css" />
+  <link rel="stylesheet" href="styles/accueil.css" />
   <script defer src="scripts/popup.js"></script>
   <script defer src="scripts/premium.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FinancialService",
+    "name": "ÆNOVE",
+    "description": "Conseil en investissements financiers indépendant, rémunéré uniquement par les honoraires de ses clients.",
+    "url": "https://aenove.fr/",
+    "email": "contact@aenove.fr",
+    "telephone": "+33649659614",
+    "priceRange": "190 € à 890 €",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "153 chemin Etxehasia",
+      "postalCode": "64480",
+      "addressLocality": "Ustaritz",
+      "addressRegion": "Nouvelle-Aquitaine",
+      "addressCountry": "FR"
+    },
+    "areaServed": ["Pays Basque", "France"],
+    "founder": {
+      "@type": "Person",
+      "name": "Matthieu Skendzic",
+      "jobTitle": "Conseiller en investissements financiers"
+    },
+    "sameAs": [
+      "https://aenove.substack.com",
+      "https://zeroretro.fr/cif/aenove-ustaritz"
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -31,11 +69,13 @@
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#philosophie">Philosophie</a></li>
-      <li><a href="#offres">Offres</a></li>
+      <li><a href="#accompagnement">Accompagnement</a></li>
+      <li><a href="#ateliers">Ateliers</a></li>
+      <li><a href="#entreprise">Entreprise</a></li>
       <li><a href="#matthieu">À propos</a></li>
       <li><a href="#analyses">Analyses</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li class="nav-cta-item"><a href="https://calendly.com/contact-aenove" target="_blank" rel="noopener" class="nav-cta">Appel découverte</a></li>
     </ul>
   </nav>
 
@@ -113,10 +153,14 @@
       <p class="hero-subtitle">Finance &amp; Stratégie</p>
       <span class="hero-rule"></span>
       <p class="hero-tagline">
-        Un conseil de qualité, indépendant et sans conflit d'intérêts —<br>
+        Un conseil de qualité, indépendant et sans conflit d'intérêts,<br>
         accessible à tous, quelle que soit votre situation.
       </p>
-      <a href="#offres" class="hero-cta">Découvrir les offres</a>
+      <div class="hero-actions">
+        <a href="https://calendly.com/contact-aenove" target="_blank" rel="noopener" class="hero-cta">Réserver un appel découverte</a>
+        <a href="#accompagnement" class="hero-cta hero-cta--secondaire">Découvrir l'accompagnement</a>
+      </div>
+      <p class="hero-note">20 minutes en visio, gratuit et sans engagement.</p>
     </div>
 
     <div class="scroll-hint" aria-hidden="true">
@@ -132,7 +176,7 @@
       <h2 class="section-title" data-reveal>Le conseil de qualité<br>n'est pas un privilège.</h2>
       <div class="philo-grid">
         <div class="philo-text" data-reveal>
-          <p>ÆNOVE est né d'une conviction simple : les stratégies solides, les analyses rigoureuses et les conseils éclairés dont bénéficient les personnes fortunées — vous y avez droit aussi.</p>
+          <p>ÆNOVE est né d'une conviction simple : les stratégies solides, les analyses rigoureuses et les conseils éclairés dont bénéficient les personnes fortunées, vous y avez droit aussi.</p>
           <p>Dans un contexte où les retraites sont incertaines, où l'inflation érode l'épargne dormante et où l'instabilité politique redessine les règles du jeu économique, prendre en main sa situation financière n'est plus une option. C'est une nécessité.</p>
           <p>ÆNOVE ne vend pas de produits financiers. ÆNOVE ne perçoit pas de commission. Le seul intérêt ici, c'est le vôtre.</p>
         </div>
@@ -141,7 +185,7 @@
             <div class="pillar-num">I</div>
             <div>
               <div class="pillar-title">Qualité</div>
-              <p class="pillar-desc">Une sélection rigoureuse, fondée sur l'analyse — des instruments financiers solides, choisis pour durer et adaptés à votre situation.</p>
+              <p class="pillar-desc">Une sélection rigoureuse, fondée sur l'analyse : des instruments financiers solides, choisis pour durer et adaptés à votre situation.</p>
             </div>
           </div>
           <div class="pillar">
@@ -163,74 +207,168 @@
     </div>
   </section>
 
-  <!-- OFFRES -->
-  <section id="offres">
+  <!-- ACCOMPAGNEMENT -->
+  <section id="accompagnement">
+    <span id="offres" aria-hidden="true"></span>
     <div class="container">
-      <p class="section-label">Les offres ÆNOVE</p>
-      <h2 class="section-title" data-reveal>Quatre prestations,<br>une même exigence.</h2>
-      <p class="section-lead" data-reveal data-delay="1">Chaque prestation est indépendante et complète. Vous choisissez ce dont vous avez besoin, au moment où vous en avez besoin.</p>
-      <div class="offres-grid">
+      <p class="section-label">Accompagnement</p>
+      <h2 class="section-title" data-reveal>Cinq prestations,<br>une même exigence.</h2>
+      <p class="section-lead" data-reveal data-delay="1">Chaque prestation a un rôle précis et un prix fixe, connu d'avance. Pour savoir laquelle vous correspond, commencez par l'appel découverte.</p>
+
+      <div class="appel-decouverte" data-reveal>
+        <div class="appel-texte">
+          <p class="offre-tag">Premier pas · Gratuit</p>
+          <h3 class="appel-titre">L'appel découverte</h3>
+          <p class="appel-desc">Vingt minutes en visio, sans engagement. Vous me présentez votre situation et ce que vous cherchez ; je vous indique la prestation qui y répond, ou je vous dis franchement si aucune ne vous est utile. Le conseil en investissement vient ensuite, dans le cadre de la prestation choisie.</p>
+        </div>
+        <a href="https://calendly.com/contact-aenove" target="_blank" rel="noopener" class="offre-cta appel-cta">Réserver mon appel</a>
+      </div>
+
+      <p class="offres-groupe" data-reveal>Trois portes d'entrée</p>
+      <div class="offres-grid offres-grid--trois">
 
         <div class="offre-card" data-reveal data-delay="1">
           <p class="offre-tag">Diagnostic</p>
           <h3 class="offre-name">Séance<br>Boussole</h3>
           <div class="offre-price"><sup>€</sup>190</div>
-          <p class="offre-duration">Séance unique · 90 minutes</p>
-          <p class="offre-desc">Avant d'investir, il faut savoir d'où on part. En 90 minutes, on passe en revue votre situation financière dans sa globalité : revenus, charges, dépenses, épargne. On identifie ensemble les marges de manœuvre et, si besoin, on structure vos comptes pour que chaque euro ait une destination claire.</p>
+          <p class="offre-duration">Séance unique · 60 minutes</p>
+          <p class="offre-desc">Avant de savoir où placer votre argent, il faut savoir combien vous pouvez réellement investir. En une heure, on passe en revue revenus, charges, dépenses et épargne, pour chiffrer votre capacité d'investissement et les leviers pour la dégager.</p>
           <ul class="offre-features">
-            <li>Analyse complète de vos revenus et de vos charges</li>
-            <li>Identification des optimisations possibles</li>
-            <li>Structuration de vos enveloppes (loisirs, charges, épargne, investissement)</li>
-            <li>Livrable PDF sous 48h</li>
+            <li>Votre situation financière passée en revue dans sa globalité</li>
+            <li>Trois leviers prioritaires, classés par ordre d'impact</li>
+            <li>Une synthèse d'une page sous 48&nbsp;h</li>
+            <li>Une prestation autonome, sans engagement pour la suite</li>
           </ul>
-          <span class="offre-badge">Hors conseil en investissement — première étape avant d'investir</span>
-          <a href="https://calendly.com/contact-aenove" target="_blank" rel="noopener" class="offre-cta">Réserver ma séance</a>
+          <span class="offre-badge">Hors conseil en investissement</span>
+          <a href="https://calendly.com/contact-aenove" target="_blank" rel="noopener" class="offre-cta">Réserver l'appel gratuit</a>
         </div>
 
         <div class="offre-card" data-reveal data-delay="2">
-          <p class="offre-tag">Pédagogie &amp; décodage</p>
-          <h3 class="offre-name">Consultation</h3>
-          <div class="offre-price"><sup>€</sup>250</div>
+          <p class="offre-tag">Une question précise</p>
+          <h3 class="offre-name">Conseil<br>ciblé</h3>
+          <div class="offre-price"><sup>€</sup>290</div>
           <p class="offre-duration">Séance unique · 60 minutes</p>
-          <p class="offre-desc">Comprendre avant de décider. Un mécanisme, une classe d'actifs, une méthode d'analyse, la structure d'un produit : on prend le temps de décortiquer ce qui vous intrigue, jusqu'à ce que ce soit clair. Vous repartez avec un cadre de lecture que vous pourrez réutiliser seul.</p>
+          <p class="offre-desc">Où placer une prime, comment investir chaque mois, votre PEA est-il bien construit&nbsp;? Une question d'investissement précise mérite une réponse précise : une recommandation personnalisée, dans le cadre complet du conseil réglementé.</p>
           <ul class="offre-features">
-            <li>Le sujet de votre choix, expliqué en profondeur</li>
-            <li>Une méthode d'analyse transmise, pas une réponse toute faite</li>
-            <li>Ressources et pistes pour continuer en autonomie</li>
-            <li>Synthèse écrite de la séance</li>
+            <li>Un questionnaire en ligne avant la séance</li>
+            <li>Une séance de 60 minutes pour analyser et répondre</li>
+            <li>Une feuille de route et sa déclaration d'adéquation sous 48&nbsp;h</li>
+            <li>Un besoin plus large&nbsp;? Passage au Conseil Sur Mesure avant la séance, sans frais</li>
           </ul>
-          <span class="offre-badge">Pédagogie — ni conseil en investissement, ni recommandation personnalisée</span>
-          <a href="https://calendly.com/contact-aenove" target="_blank" rel="noopener" class="offre-cta">Réserver ma séance</a>
+          <a href="https://calendly.com/contact-aenove" target="_blank" rel="noopener" class="offre-cta">Réserver l'appel gratuit</a>
         </div>
 
         <div class="offre-card" data-reveal data-delay="3">
           <p class="offre-tag">Conseil complet</p>
           <h3 class="offre-name">Conseil<br>Sur Mesure</h3>
           <div class="offre-price"><sup>€</sup>890</div>
-          <p class="offre-duration">Deux séances · Suivi inclus</p>
-          <p class="offre-desc">Un conseil en investissement complet et personnalisé, sur deux séances. On définit ensemble votre horizon, votre tolérance au risque et vos objectifs — puis nous construisons une stratégie adaptée, avec toute la rigueur réglementaire du cadre CIF.</p>
+          <p class="offre-duration">Deux séances · Foyer inclus</p>
+          <p class="offre-desc">Un conseil en investissement complet et personnalisé, pour votre foyer. On définit ensemble votre horizon, votre tolérance au risque et vos objectifs, puis nous construisons une stratégie adaptée, avec toute la rigueur réglementaire du cadre CIF.</p>
           <ul class="offre-features">
             <li>Définition de votre profil et de vos objectifs</li>
-            <li>Sélection des enveloppes fiscales adaptées</li>
-            <li>Stratégie d'allocation et feuille de route personnalisée</li>
-            <li>Document de conseil complet transmis sous 48h</li>
+            <li>Allocation, enveloppes adaptées et feuille de route priorisée</li>
+            <li>Compte-rendu complet et déclaration d'adéquation sous 48&nbsp;h</li>
+            <li>Réglé en trois temps, libre de s'arrêter après la première séance (297&nbsp;€)</li>
           </ul>
-          <a href="https://calendly.com/contact-aenove" target="_blank" rel="noopener" class="offre-cta">Réserver ma séance</a>
+          <span class="offre-badge">Appel découverte gratuit recommandé</span>
+          <a href="https://calendly.com/contact-aenove" target="_blank" rel="noopener" class="offre-cta">Réserver l'appel gratuit</a>
         </div>
 
-        <div class="offre-card" data-reveal data-delay="4">
+      </div>
+
+      <p class="offres-groupe" data-reveal>Deux niveaux de suivi</p>
+      <div class="offres-grid">
+
+        <div class="offre-card" data-reveal data-delay="1">
+          <p class="offre-tag">Suivi annuel</p>
+          <h3 class="offre-name">Cap<br>Essentiel</h3>
+          <div class="offre-price"><sup>€</sup>290<span style="font-size:1rem;color:rgba(245,242,236,0.35)">/an</span></div>
+          <p class="offre-duration">Abonnement · Une revue par an</p>
+          <p class="offre-desc">Un rendez-vous par an pour vérifier que votre stratégie tient le cap, ajuster ce qui doit l'être et garder un dossier à jour.</p>
+          <ul class="offre-features">
+            <li>Une revue annuelle de 60 minutes</li>
+            <li>Une déclaration d'adéquation mise à jour</li>
+            <li>Deux questions écrites dans l'année, réponse sous 5 jours ouvrés</li>
+            <li>Réglé à la signature, puis à chaque date anniversaire</li>
+          </ul>
+          <span class="offre-badge">De 30&nbsp;000 à 70&nbsp;000&nbsp;€ placés</span>
+          <a href="#contact" class="offre-cta">Me contacter</a>
+        </div>
+
+        <div class="offre-card" data-reveal data-delay="2">
           <p class="offre-tag">Accompagnement annuel</p>
           <h3 class="offre-name">Cap<br>&amp; Suivi</h3>
           <div class="offre-price"><sup>€</sup>690<span style="font-size:1rem;color:rgba(245,242,236,0.35)">/an</span></div>
           <p class="offre-duration">Abonnement · Accès prioritaire</p>
           <p class="offre-desc">Pour ne pas rester seul face à l'évolution de vos investissements. Un regard expert, deux fois par an, et une ligne ouverte pour vos questions.</p>
           <ul class="offre-features">
-            <li>Deux points de 60 minutes par an</li>
-            <li>Accès email cadré (réponse sous 72h ouvrées)</li>
-            <li>Révision de la feuille de route</li>
+            <li>Deux séances de suivi de 60 minutes par an</li>
+            <li>Six échanges écrits, réponse sous 5 jours ouvrés</li>
+            <li>Révision de la feuille de route et de l'adéquation</li>
+            <li>Réglé en une fois ou en trois échéances de 230&nbsp;€</li>
           </ul>
-          <span class="offre-badge">Réservé aux clients Conseil Sur Mesure</span>
+          <span class="offre-badge">Au-delà de 70&nbsp;000&nbsp;€ placés · après un Conseil Sur Mesure</span>
           <a href="#contact" class="offre-cta">Me contacter</a>
+        </div>
+
+      </div>
+      <p class="offres-note" data-reveal>Sous 30&nbsp;000&nbsp;€ placés, je ne vous proposerai pas d'abonnement : il coûterait plus de 1&nbsp;% par an. Vous revenez par un Conseil ciblé quand un événement le justifie. Le Cap Essentiel prolonge un Conseil ciblé ou un Conseil Sur Mesure, le Cap &amp; Suivi un Conseil Sur Mesure. Le montant placé s'entend des enveloppes couvertes par votre feuille de route, versements prévus sur douze mois compris.</p>
+
+      <div class="independance" data-reveal>
+        <a class="independance-sceau" href="https://zeroretro.fr/verification/aenove-ustaritz" target="_blank" rel="noopener" aria-label="Vérifier l'attestation zéro rétro d'ÆNOVE sur ZeroRetro (nouvel onglet)">
+          <img src="https://zeroretro.fr/badge/aenove-ustaritz.svg?format=sceau" alt="Badge ZeroRetro : zéro rétro attesté, ÆNOVE" width="200" height="200" loading="lazy" />
+        </a>
+        <div class="independance-texte">
+          <p class="offre-tag">Indépendance</p>
+          <h3 class="independance-titre">Rémunéré uniquement par vous</h3>
+          <p>Aucune commission, aucune rétrocession : vos honoraires sont ma seule rémunération, et c'est ce qui me permet de vous conseiller sans arrière-pensée. Cet engagement fait l'objet d'une attestation signée, publiée sur ZeroRetro, un annuaire indépendant de conseillers rémunérés uniquement par leurs clients. Le sceau ouvre la page de vérification.</p>
+        </div>
+      </div>
+
+      <p class="offres-groupe" data-reveal>Offrir</p>
+      <div class="offres-grid offres-grid--une">
+
+        <div class="offre-card offre-card--compacte offre-card--horizontale" data-reveal data-delay="1">
+          <div class="offre-horizontale-texte">
+            <p class="offre-tag">Carte cadeau</p>
+            <h3 class="offre-name">Offrir un cap</h3>
+            <p class="offre-desc">Une Séance Boussole à offrir à un proche majeur, valable 12 mois. Ce qui se dit en séance reste entre lui et ÆNOVE.</p>
+          </div>
+          <div class="offre-horizontale-action">
+            <div class="offre-price"><sup>€</sup>190</div>
+            <a href="#contact" class="offre-cta">Offrir une séance</a>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="offres-mentions">Tarifs nets, TVA non applicable (article 293 B du CGI). Investir comporte un risque de perte en capital. Le Conseil ciblé, le Conseil Sur Mesure, le Cap Essentiel et le Cap &amp; Suivi sont des prestations de conseil en investissements financiers, exercées sous le statut de CIF (ORIAS n° 26003570). La Séance Boussole est un diagnostic budgétaire et financier : elle ne constitue pas un conseil en investissement au sens de l'article L.541-1 du Code monétaire et financier et n'est pas exercée sous ce statut. L'appel découverte est un échange préalable gratuit, sans recommandation personnalisée.</p>
+    </div>
+  </section>
+
+  <!-- ATELIERS ET ENTREPRISE : chantiers en préparation -->
+  <section id="chantiers">
+    <div class="container">
+      <p class="section-label">En préparation</p>
+      <h2 class="section-title" data-reveal>Deux chantiers<br>en cours.</h2>
+      <div class="chantiers-grid">
+
+        <div class="chantier" id="ateliers" data-reveal data-delay="1">
+          <p class="chantier-label">Ateliers</p>
+          <h3 class="chantier-titre">Comprendre à plusieurs</h3>
+          <span class="chantier-statut">En préparation</span>
+          <p>Des ateliers collectifs d'information financière, sans jargon et sans produit à vendre, sont en préparation. Thèmes, formats et tarifs seront publiés ici dès qu'ils seront prêts.</p>
+          <p>Vous aimeriez y participer, ou en accueillir un dans votre entreprise, votre association ou votre CSE ? Écrivez-moi, je vous préviendrai en priorité.</p>
+          <a href="#contact" class="chantier-lien">Me contacter</a>
+        </div>
+
+        <div class="chantier" id="entreprise" data-reveal data-delay="2">
+          <p class="chantier-label">Entreprise</p>
+          <h3 class="chantier-titre">Haut de bilan</h3>
+          <span class="chantier-statut">En préparation</span>
+          <p>Un accompagnement des dirigeants sur les questions de haut de bilan est en cours de construction. Son contenu et ses conditions seront présentés ici une fois le dispositif finalisé.</p>
+          <p>Vous dirigez une entreprise et souhaitez être informé de son lancement ? Écrivez-moi.</p>
+          <a href="#contact" class="chantier-lien">Me contacter</a>
         </div>
 
       </div>
@@ -244,12 +382,12 @@
       <h2 class="section-title" data-reveal>Un conseiller<br>différent.</h2>
       <div class="matthieu-grid">
         <div class="matthieu-portrait" data-reveal style="padding:0; overflow:hidden;">
-            <img src="photo.webp" alt="Matthieu Skendzic — ÆNOVE" style="width: 100%; height: 100%; object-fit: cover; object-position: center top;">
+            <img src="photo.webp" alt="Matthieu Skendzic, fondateur d'ÆNOVE" style="width: 100%; height: 100%; object-fit: cover; object-position: center top;">
         </div>
         <div class="matthieu-content" data-reveal>
           <p>Je suis Matthieu, conseiller en investissements financiers, membre de la CNCEF. Mais ce qui définit mon approche du conseil, c'est peut-être mon autre métier : éducateur spécialisé.</p>
-          <p><em>Expliquer clairement, s'adapter à chaque personne</em> — ce sont des compétences que j'ai forgées au contact des gens. Et il y a un fil conducteur entre les deux métiers : l'éducation spécialisée cherche à rendre les personnes autonomes. C'est exactement ce que je vise en tant que CIF — non pas créer une dépendance au conseil, mais vous donner les clés pour comprendre, décider et agir.</p>
-          <p>Chez ÆNOVE, je suis rémunéré uniquement par mes clients — jamais par les produits que je recommande. Pas de commission, pas de conflit d'intérêts : mon seul intérêt, c'est le vôtre.</p>
+          <p><em>Expliquer clairement, s'adapter à chaque personne</em> : ce sont des compétences que j'ai forgées au contact des gens. Et il y a un fil conducteur entre les deux métiers : l'éducation spécialisée cherche à rendre les personnes autonomes. C'est exactement ce que je vise en tant que CIF : non pas créer une dépendance au conseil, mais vous donner les clés pour comprendre, décider et agir.</p>
+          <p>Chez ÆNOVE, je suis rémunéré uniquement par mes clients, jamais par les produits que je recommande. Pas de commission, pas de conflit d'intérêts : mon seul intérêt, c'est le vôtre.</p>
           <p>Que vous ayez 100 € à investir chaque mois ou un patrimoine à réorganiser, vous méritez le même niveau d'attention et de rigueur.</p>
           <div class="certif-list">
             <span class="certif-item">CIF</span>
@@ -481,9 +619,9 @@
       <div class="contact-inner">
         <p class="section-label">Prendre contact</p>
         <h2 class="section-title" data-reveal>Commençons<br>par un échange.</h2>
-        <p>Pas de formulaire interminable, pas de relance commerciale. Un premier échange pour comprendre votre situation et voir si ÆNOVE peut vous apporter de la valeur.</p>
+        <p>Pas de formulaire interminable, pas de relance commerciale. Un appel découverte gratuit de 20 minutes, en visio, pour comprendre votre besoin et choisir la bonne prestation.</p>
         <div class="contact-actions" data-reveal>
-          <a href="https://calendly.com/contact-aenove" target="_blank" rel="noopener" class="btn-primary">Prendre rendez-vous</a>
+          <a href="https://calendly.com/contact-aenove" target="_blank" rel="noopener" class="btn-primary">Réserver mon appel découverte</a>
           <a href="mailto:contact@aenove.fr" id="btn-email" class="btn-secondary">Écrire par email</a>
         </div>
         <div class="contact-details" data-reveal>
@@ -519,10 +657,19 @@
     </p>
 
     <p class="footer-legal">
-      Hébergeur : Netlify, Inc. — 44 Montgomery Street, Suite 300, San Francisco, CA 94104, USA<br>
+      Hébergeur : Netlify, Inc., 101 2nd Street, San Francisco, CA 94105, États-Unis<br>
       (art. 6 III loi LCEN n°2004-575)
     </p>
 
+    <div class="footer-badge">
+      <a href="https://zeroretro.fr/verification/aenove-ustaritz" target="_blank" rel="noopener" aria-label="Vérifier l'attestation zéro rétro d'ÆNOVE sur ZeroRetro (nouvel onglet)">
+        <img src="https://zeroretro.fr/badge/aenove-ustaritz.svg" alt="Badge ZeroRetro : zéro rétro attesté" width="316" height="44" loading="lazy" />
+      </a>
+    </div>
+    <div class="footer-contrat">
+      <a href="/resilier">Résilier votre contrat</a>
+      <a href="/renoncer">Renoncer au contrat ici</a>
+    </div>
     <div class="footer-links">
       <a href="/mentions-legales">Mentions légales</a>
       <a href="/confidentialite">Politique de confidentialité</a>
@@ -532,5 +679,11 @@
     <p style="font-size:0.65rem;margin-top:1.5rem;color:rgba(245,242,236,0.18)">© 2026 ÆNOVE. Tous droits réservés.</p>
   </footer>
 
-</body>
+<script>
+document.querySelectorAll('a[href*="cdn-cgi"], a[href*="email-protection"]').forEach(function(a){
+  a.href='mailto:contact@aenove.fr';
+  if(a.querySelector('span')){a.querySelector('span').textContent='contact@aenove.fr';}
+  if(!a.querySelector('span') && a.textContent.includes('protected')){a.textContent='contact@aenove.fr';}
+});
+</script></body>
 </html>

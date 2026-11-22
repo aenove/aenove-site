@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Résilier votre contrat | ÆNOVE</title>
+  <meta name="description" content="Notifiez en ligne la résiliation de votre contrat ÆNOVE, gratuitement et sans créer de compte." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;family=Jost:wght@300;400;500&amp;display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/footer.css" />
+  <link rel="stylesheet" href="styles/nav.css" />
+  <link rel="stylesheet" href="styles/page.css" />
+  <link rel="stylesheet" href="styles/premium.css" />
+  <link rel="stylesheet" href="styles/demandes.css" />
+  <script defer src="scripts/premium.js"></script>
+  <script defer src="scripts/demandes.js"></script>
+</head>
+<body class="page-inner">
+
+  <div class="progress" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+
+  <nav>
+    <a href="/" class="nav-logo">Æ<span>NOVE</span></a>
+    <a href="/" class="nav-back">← Retour au site</a>
+  </nav>
+
+  <div class="page-content">
+    <div class="container">
+      <p class="page-eyebrow">Vos démarches</p>
+      <h1 class="page-title">Résilier votre contrat</h1>
+
+      <div class="page-section">
+        <p class="demande-intro">Cette page vous permet de notifier en ligne la résiliation de votre contrat avec ÆNOVE, gratuitement et sans créer de compte, conformément à l'article L.215-1-1 du Code de la consommation. Après vérification de votre demande, vous recevrez par courriel la confirmation de sa réception, avec la date à laquelle votre contrat prend fin et les effets de la résiliation.</p>
+      </div>
+
+      <div class="page-section">
+        <h2>Conditions et effets de la résiliation</h2>
+        <p><strong>Cap Essentiel et Cap &amp; Suivi</strong> : vous pouvez résilier à tout moment, sans motif ni pénalité. La résiliation prend effet à l'échéance de la période annuelle en cours : la lettre de mission n'est pas reconduite et aucun nouveau forfait n'est dû. Le forfait de la période en cours reste acquis, sauf dans les cas prévus à l'article 17 de votre lettre de mission, qui ouvrent droit à un remboursement au prorata.</p>
+        <p><strong>Conseil ciblé et Conseil Sur Mesure</strong> : les conditions d'annulation et de résiliation figurent à l'article 17 de votre lettre de mission.</p>
+        <p><strong>Séance Boussole</strong> : l'annulation est sans frais à tout moment avant le début de la séance (article 4 des conditions générales de vente de la Séance Boussole).</p>
+        <p>Vous avez conclu votre contrat il y a moins de quatorze jours ? Vous pouvez aussi exercer votre droit de rétractation : <a href="/renoncer">renoncer au contrat ici</a>.</p>
+      </div>
+
+      <noscript>
+        <div class="demande-note">
+          <p>Ce formulaire nécessite JavaScript. Vous pouvez aussi notifier votre résiliation par courriel à <a href="mailto:contact@aenove.fr">contact@aenove.fr</a> ou par courrier au 153 chemin Etxehasia, 64480 Ustaritz.</p>
+        </div>
+      </noscript>
+
+      <form class="demande-form" name="resiliation" method="POST" action="/resilier" data-netlify="true" netlify-honeypot="bot-field" novalidate hidden
+            data-demande="resiliation"
+            data-objet="Résiliation de mon contrat"
+            data-declaration="Je vous notifie la résiliation de mon contrat."
+            data-un-des="email,adresse_postale"
+            data-un-des-message="Indiquez une adresse électronique ou, à défaut, une adresse postale.">
+
+        <div data-etape="saisie">
+          <input type="hidden" name="form-name" value="resiliation" />
+          <input type="hidden" name="horodatage" value="" />
+          <p class="bot-field" aria-hidden="true"><label>Ne pas remplir ce champ <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
+
+          <fieldset>
+            <legend>Vos coordonnées</legend>
+            <div class="champ">
+              <label for="nom">Nom et prénom, ou dénomination sociale <span class="obligatoire">*</span></label>
+              <input type="text" id="nom" name="nom" autocomplete="name" required data-recap="Nom et prénom" />
+            </div>
+            <div class="champ">
+              <label for="email">Adresse électronique</label>
+              <input type="email" id="email" name="email" autocomplete="email" data-recap="Adresse électronique" />
+              <span class="aide">La confirmation de votre résiliation vous sera adressée à cette adresse.</span>
+            </div>
+            <div class="champ">
+              <label for="adresse_postale">Adresse postale, si vous n'avez pas d'adresse électronique</label>
+              <textarea id="adresse_postale" name="adresse_postale" autocomplete="street-address" data-recap="Adresse postale"></textarea>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Votre contrat</legend>
+            <div class="champ">
+              <label for="prestation">Prestation concernée <span class="obligatoire">*</span></label>
+              <select id="prestation" name="prestation" required data-recap="Prestation concernée">
+                <option value="">Choisissez la prestation</option>
+                <option>Cap Essentiel</option>
+                <option>Cap &amp; Suivi</option>
+                <option>Conseil ciblé</option>
+                <option>Conseil Sur Mesure</option>
+                <option>Séance Boussole</option>
+                <option>Autre</option>
+              </select>
+            </div>
+            <div class="champ">
+              <label for="reference">Référence du contrat, si vous en avez une</label>
+              <input type="text" id="reference" name="reference" data-recap="Référence" />
+              <span class="aide">Par exemple le numéro figurant sur votre lettre de mission, votre bon de commande ou votre facture.</span>
+            </div>
+            <div class="champ">
+              <label for="date_signature">Date de signature du contrat, si vous la connaissez</label>
+              <input type="date" id="date_signature" name="date_signature" data-recap="Date de signature" />
+            </div>
+            <div class="champ" data-recap="Date de résiliation souhaitée" data-recap-radio="date_mode">
+              <span class="champ-titre" id="date_mode_titre">Date de résiliation souhaitée <span class="obligatoire">*</span></span>
+              <div role="radiogroup" aria-labelledby="date_mode_titre">
+                <label class="choix"><input type="radio" name="date_mode" value="Dès que possible, selon les conditions de mon contrat" data-texte="Dès que possible, selon les conditions de mon contrat" checked required /> Dès que possible, selon les conditions de mon contrat</label>
+                <label class="choix"><input type="radio" name="date_mode" value="À une date précise" data-texte="À une date précise" data-affiche="bloc_date_souhaitee" /> À une date précise</label>
+              </div>
+              <div id="bloc_date_souhaitee" class="champ" hidden>
+                <label for="date_souhaitee">Date souhaitée</label>
+                <input type="date" id="date_souhaitee" name="date_souhaitee" />
+              </div>
+              <span class="aide">La résiliation prend effet dans le respect des conditions légales et contractuelles applicables à votre contrat.</span>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Motif</legend>
+            <div class="champ">
+              <label for="motif">Motif de la résiliation</label>
+              <select id="motif" name="motif" data-recap="Motif" data-aide-cible="aide_motif">
+                <option>Aucun motif particulier</option>
+                <option data-aide="Aucun justificatif n'est nécessaire : il appartient à ÆNOVE de prouver l'envoi de cette information.">Information préalable à la reconduction non reçue (article L.215-1 du Code de la consommation)</option>
+                <option data-aide="Justificatif à fournir : la mise en demeure écrite adressée au Conseiller et tout document établissant le manquement invoqué.">Manquement du Conseiller à ses obligations</option>
+                <option data-aide="Justificatif à fournir : tout document établissant l'événement de force majeure et sa durée.">Force majeure (article 1218 du Code civil)</option>
+                <option data-aide="Justificatif à fournir : tout document établissant le motif invoqué.">Autre motif légitime</option>
+              </select>
+              <span class="aide" id="aide_motif" hidden></span>
+            </div>
+            <div class="champ">
+              <label for="precisions">Précisions, si vous le souhaitez</label>
+              <textarea id="precisions" name="precisions" data-recap="Précisions"></textarea>
+            </div>
+            <div class="demande-note">
+              <p>Si votre résiliation repose sur un motif légitime, vous pouvez adresser le justificatif par courriel à <a href="mailto:contact@aenove.fr">contact@aenove.fr</a> ou par courrier au 153 chemin Etxehasia, 64480 Ustaritz.</p>
+            </div>
+          </fieldset>
+
+          <div class="boutons">
+            <button type="submit" class="btn btn-principal">Vérifier ma demande</button>
+          </div>
+        </div>
+
+        <div data-etape="recap" hidden>
+          <h2 class="etape-titre">Récapitulatif de votre résiliation</h2>
+          <p>Vérifiez les informations ci-dessous. Vous pouvez encore les modifier avant de notifier votre résiliation.</p>
+          <dl class="recap" data-recap-liste></dl>
+          <div class="boutons">
+            <button type="button" class="btn btn-secondaire" data-action="modifier">Modifier</button>
+            <button type="button" class="btn btn-principal" data-action="envoyer">Notifier la résiliation</button>
+          </div>
+        </div>
+      </form>
+
+      <div class="alerte" data-etape="echec" hidden>
+        <h2 class="etape-titre">La transmission n'a pas abouti</h2>
+        <p>Votre résiliation n'a pas pu être transmise. Réessayez dans un instant, ou envoyez-la par courriel : <a data-mailto href="mailto:contact@aenove.fr">ouvrir un courriel prérempli</a>.</p>
+      </div>
+
+      <div data-etape="fin" hidden>
+        <h2 class="etape-titre">Votre résiliation a bien été notifiée</h2>
+        <p class="confirmation-horodatage">Notifiée le <span data-horodatage></span> (heure de Paris).</p>
+        <p>ÆNOVE vous confirmera la réception de votre résiliation par courriel, dans les meilleurs délais, en vous indiquant la date à laquelle votre contrat prend fin et les effets de la résiliation. Conservez ce récapitulatif.</p>
+        <dl class="recap" data-recap-liste></dl>
+        <div class="boutons no-print">
+          <button type="button" class="btn btn-secondaire" data-action="imprimer">Imprimer ou enregistrer en PDF</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo">ÆNOVE</div>
+    <p class="footer-legal">ÆNOVE — Matthieu SKENDZIC — Entrepreneur Individuel — Régime micro-BNC<br>
+    SIRET : 994 150 506 00016 — 153 chemin Etxehasia — 64480 Ustaritz<br>
+    <a href="https://www.orias.fr" target="_blank" rel="noopener">ORIAS n° 26003570</a> — membre de la CNCEF, association professionnelle habilitée par l'AMF (art. L. 541-4 CMF)</p>
+    <div class="footer-divider"></div>
+    <div class="footer-badge">
+      <a href="https://zeroretro.fr/verification/aenove-ustaritz" target="_blank" rel="noopener" aria-label="Vérifier l'attestation zéro rétro d'ÆNOVE sur ZeroRetro (nouvel onglet)">
+        <img src="https://zeroretro.fr/badge/aenove-ustaritz.svg" alt="Badge ZeroRetro : zéro rétro attesté" width="316" height="44" loading="lazy" />
+      </a>
+    </div>
+    <div class="footer-contrat">
+      <a href="/resilier">Résilier votre contrat</a>
+      <a href="/renoncer">Renoncer au contrat ici</a>
+    </div>
+    <div class="footer-links">
+      <a href="/mentions-legales">Mentions légales</a>
+      <a href="/confidentialite">Politique de confidentialité</a>
+      <a href="/cgv">CGV</a>
+      <a href="/durabilite">Politique de durabilité</a>
+    </div>
+    <p style="font-size:0.65rem;margin-top:1.5rem;color:rgba(245,242,236,0.18)">© 2026 ÆNOVE. Tous droits réservés.</p>
+  </footer>
+
+<script>
+document.querySelectorAll('a[href*="cdn-cgi"], a[href*="email-protection"]').forEach(function(a){
+  a.href='mailto:contact@aenove.fr';
+  if(a.querySelector('span')){a.querySelector('span').textContent='contact@aenove.fr';}
+  if(!a.querySelector('span') && a.textContent.includes('protected')){a.textContent='contact@aenove.fr';}
+});
+</script></body>
+</html>

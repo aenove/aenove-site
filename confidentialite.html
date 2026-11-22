@@ -52,7 +52,7 @@
           </thead>
           <tbody>
             <tr>
-              <td>Gestion des clients (Séance Boussole, Conseil Sur Mesure, Cap & Suivi)</td>
+              <td>Gestion des clients (Séance Boussole et carte cadeau, Conseil ciblé, Conseil Sur Mesure, Cap Essentiel, Cap & Suivi)</td>
               <td>Identité, coordonnées, situation financière et patrimoniale, revenus, objectifs d'investissement, tolérance au risque, préférences de durabilité</td>
               <td>Exécution du contrat (art. 6(1)(b) RGPD)</td>
             </tr>
@@ -60,6 +60,11 @@
               <td>Obligations LCB-FT</td>
               <td>Identité complète, pièces d'identité, origine des fonds</td>
               <td>Obligation légale (art. 6(1)(c) RGPD)</td>
+            </tr>
+            <tr>
+              <td>Demandes de résiliation et de rétractation en ligne</td>
+              <td>Nom et prénom ou dénomination, adresse électronique ou postale, prestation et références du contrat, date souhaitée, motif et précisions éventuels</td>
+              <td>Obligation légale (art. 6(1)(c) RGPD ; articles L.215-1-1, L.221-21 et L.222-8 du Code de la consommation)</td>
             </tr>
             <tr>
               <td>Prospection commerciale et prise de contact</td>
@@ -85,7 +90,7 @@
         <p>ÆNOVE ne cède ni ne revend les données personnelles de ses clients. Les données peuvent être transmises aux sous-traitants suivants, dans le strict cadre des finalités ci-dessus :</p>
         <ul>
           <li>Calendly (prise de rendez-vous en ligne — transfert US sous EU-US Data Privacy Framework)</li>
-          <li>Netlify (hébergement du site — transfert US sous EU-US Data Privacy Framework)</li>
+          <li>Netlify (hébergement du site et réception des formulaires de résiliation et de rétractation ; transfert US sous EU-US Data Privacy Framework)</li>
           <li>Hébergeur de messagerie professionnelle</li>
           <li>Outil de facturation</li>
         </ul>
@@ -100,6 +105,7 @@
           <li>Données prospects : 3 ans à compter du dernier contact</li>
           <li>Documents comptables : 10 ans</li>
           <li>Données de prise de rendez-vous : 3 ans</li>
+          <li>Demandes de résiliation et de rétractation : même durée que le dossier client concerné</li>
         </ul>
       </div>
 
@@ -122,6 +128,7 @@
       <div class="page-section">
         <h2>Cookies</h2>
         <p>Le site aenove.fr n'utilise aucun cookie non essentiel (pas de cookie analytique, pas de cookie publicitaire, pas de traceur tiers). Aucun bandeau de consentement n'est requis. Cette position sera réévaluée en cas d'ajout d'un outil de mesure d'audience.</p>
+        <p>Le site affiche par ailleurs des contenus hébergés par des tiers : les polices de caractères (Google Fonts) et le badge ZeroRetro, chargé depuis zeroretro.fr. Comme pour toute ressource hébergée par un tiers, leur affichage transmet à ces services l'adresse IP du visiteur, nécessaire à l'envoi du contenu.</p>
       </div>
 
       <div class="page-section">
@@ -130,7 +137,7 @@
       </div>
 
       <div class="page-section">
-        <p style="font-size:0.82rem; color: var(--ink-soft); font-style:italic;">Dernière mise à jour : avril 2026.</p>
+        <p style="font-size:0.82rem; color: var(--ink-soft); font-style:italic;">Dernière mise à jour : novembre 2026.</p>
       </div>
 
     </div>
@@ -142,6 +149,15 @@
     SIRET : 994 150 506 00016 — 153 chemin Etxehasia — 64480 Ustaritz<br>
     <a href="https://www.orias.fr" target="_blank" rel="noopener">ORIAS n° 26003570</a> — membre de la CNCEF, association professionnelle habilitée par l'AMF (art. L. 541-4 CMF)</p>
     <div class="footer-divider"></div>
+    <div class="footer-badge">
+      <a href="https://zeroretro.fr/verification/aenove-ustaritz" target="_blank" rel="noopener" aria-label="Vérifier l'attestation zéro rétro d'ÆNOVE sur ZeroRetro (nouvel onglet)">
+        <img src="https://zeroretro.fr/badge/aenove-ustaritz.svg" alt="Badge ZeroRetro : zéro rétro attesté" width="316" height="44" loading="lazy" />
+      </a>
+    </div>
+    <div class="footer-contrat">
+      <a href="/resilier">Résilier votre contrat</a>
+      <a href="/renoncer">Renoncer au contrat ici</a>
+    </div>
     <div class="footer-links">
       <a href="/mentions-legales">Mentions légales</a>
       <a href="/confidentialite">Politique de confidentialité</a>
@@ -151,5 +167,11 @@
     <p style="font-size:0.65rem;margin-top:1.5rem;color:rgba(245,242,236,0.18)">© 2026 ÆNOVE. Tous droits réservés.</p>
   </footer>
 
-</body>
+<script>
+document.querySelectorAll('a[href*="cdn-cgi"], a[href*="email-protection"]').forEach(function(a){
+  a.href='mailto:contact@aenove.fr';
+  if(a.querySelector('span')){a.querySelector('span').textContent='contact@aenove.fr';}
+  if(!a.querySelector('span') && a.textContent.includes('protected')){a.textContent='contact@aenove.fr';}
+});
+</script></body>
 </html>
